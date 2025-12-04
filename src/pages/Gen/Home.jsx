@@ -10,15 +10,14 @@ const Home = () => {
   const { data, marked } = useContext(ContextApi);
 
   return (
-    <section className="flex flex-col gap-y-5">
-
+    <section className="flex flex-col">
       {/* MAIN WELCOME + ATTENDANCE */}
       <article className="rounded-4xl m-5 flex justify-center items-center">
         <WelcomeCard data={{ ...data, marked }} />
       </article>
 
       {/* SECOND BLOCK ui-done*/}
-      <article className="rounded-4xl m-1 flex justify-around items-center gap-2 h-[35vh]">
+      <article className="rounded-4xl m-2 flex justify-around items-center gap-2 h-[35vh]">
         <div className=" border shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] border-white rounded-4xl w-[73%] h-[28vh]">
           <AttendanceChart />
         </div>
@@ -28,26 +27,27 @@ const Home = () => {
       </article>
 
       {/* THIRD BLOCK */}
-      <article className="rounded-4xl flex justify-around items-center m-1">
-        
+      <article className="rounded-4xl flex justify-evenly items-center m-2">
         {/* Left Grid */}
         <section className="rounded-4xl flex flex-wrap justify-center w-[48%] p-3">
-          <MiniCard />
-          <MiniCard />
-          <MiniCard />
-          <MiniCard />
+          <MiniCard
+            color="#0097bd9f"
+            title={"Leave Portal"}
+            route={"leaveportal"}
+          />
+          <MiniCard
+            color="#ba01d39f"
+            title={"Attendance"}
+            route={"attendance"}
+          />
         </section>
 
         {/* Right Grid */}
-        <section className="rounded-4xl flex flex-wrap justify-center w-[48%] p-3">
-          <MiniCard />
-          <MiniCard />
-          <MiniCard />
-          <MiniCard />
+        <section className="rounded-4xl flex  flex-wrap justify-center w-[48%] p-3">
+          <MiniCard color="#fc710098" title={"Break Time"} route={"break"} />
+          <MiniCard color="#fc000098" title={"Holiday"} route={"holiday"} />
         </section>
-
       </article>
-
     </section>
   );
 };
