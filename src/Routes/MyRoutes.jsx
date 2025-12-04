@@ -15,13 +15,31 @@ const MyRoutes = createBrowserRouter([
       {
         path: "",
         element: <Home />,
-      },{
+      },
+      {
         path: "login",
         element: <Login />,
-      },{
+      },
+      {
         path: "register",
         element: <Register />,
-      }
+      },
+      {
+        path: "leaveportal",
+        element: <Register />,
+      },
+      {
+        path: "attendance",
+        element: <Register />,
+      },
+      {
+        path: "break",
+        element: <Register />,
+      },
+      {
+        path: "holiday",
+        element: <Register />,
+      },
     ],
   },
   {

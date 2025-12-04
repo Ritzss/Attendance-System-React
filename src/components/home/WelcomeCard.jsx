@@ -1,22 +1,21 @@
 import React from "react";
 import CoinFlipAvatar from "../UI/CoinFlipAvatar";
-import malePic from "../../Assets/Images/maleprofile.png";
 
 const WelcomeCard = ({ data }) => {
   console.log(data);
   console.log(data.marked);
-  
-  data.profile_image = malePic;
+
   return (
     <div className="flex p-7 justify-between  border shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] border-white rounded-4xl w-full h-[65vh]">
-
       {/* Left */}
       <div className="w-[48%] p-5 h-full rounded-4xl">
         <div className="rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
           {data?.profile_image ? (
             <img
               className="w-[40vh] h-[35vh] rounded-full"
-              style={{border : data.marked? "10px solid green" : "10px solid red"}}
+              style={{
+                border: data.marked ? "10px solid green" : "10px solid red",
+              }}
               src={data.profile_image}
               alt="ProfilePic"
             />
@@ -30,7 +29,8 @@ const WelcomeCard = ({ data }) => {
             Welcome Back, {data?.name}!
           </h1>
           <p className="text-white text-lg mt-5">
-            Welcome back to the flow! Your data is synced, your tasks are ready, and your energy is unmatched.
+            Welcome back to the flow! Your data is synced, your tasks are ready,
+            and your energy is unmatched.
             <br />
             <span className="text-3xl font-semibold bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               Let’s create something awesome today.
