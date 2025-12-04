@@ -24,11 +24,11 @@ export default function CoinFlipAvatar() {
   }, []);
 
   return (
-    <div className=" flex justify-center items-center w-[30vh] h-[30vh] rounded-full mx-auto">
+    <div className=" flex justify-center items-center w-[40vh] h-[35vh] rounded-full mx-auto">
       <img
         src={images[index]}
         className={`
-          w-full h-full mt-[5vh] object-contain rounded-full transition-transform duration-1000
+          w-full h-full  object-contain rounded-full transition-transform duration-1000
           ${flip ? "rotate-y-180" : ""}
         `}
         style={{

@@ -1,10 +1,10 @@
 import React from "react";
-import FuzzyText from "../components/UI/FuzzyText";
+import FuzzyText from "../../components/UI/FuzzyText";
 import { NavLink } from "react-router";
 
 const Error = () => {
   return (
-    <div className="flex flex-col gap-6 justify-center items-center mt-[11vh]">
+    <div className="flex flex-col gap-6 justify-center items-center mt-[10vh]">
       <div className="self-center flex justify-center items-center staticbg shadow-[inset_0_0_50px_rgba(0,0,0)] rounded-4xl h-[70vh] w-[70vw] overflow-hidden">
         {/* FOREGROUND CONTENT (transparent to mouse) */}
         <div
@@ -35,10 +35,10 @@ const Error = () => {
           <div className="knob-indicator"></div>
         </div>
       </NavLink>
-      <div className="relative -top-[13.1vh] left-[23.6vw] ">
-        <div className="mt-5 absolute -z-10 top-1 text-sm text-white" to={"/"}>
+      <div className="relative -top-[18vh] text-center left-[23vw] ">
+        <div className="mt-5 absolute -z-10 top-1 text-lg font-bold text-white" to={"/"}>
           {" "}
-          Return{" "}
+          Rewind Signal{" "}
         </div>
       </div>
     </div>

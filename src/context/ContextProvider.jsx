@@ -9,7 +9,7 @@ const ContextProvider = ({ children }) => {
   let [user, setUser] = useState();
   let [data, setData] = useState();
   let [authUser, setAuthUser] = useState();
-  let [marked,setMarked] = useState(false);
+  let [marked,setMarked] = useState(true);
 
   const getUsers = async () => {
     const { data, error } = await supabase.from("profiles").select("*");

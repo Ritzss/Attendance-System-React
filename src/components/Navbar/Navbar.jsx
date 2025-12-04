@@ -1,6 +1,6 @@
 import React from 'react'
 import Body from './Body'
-import AuthNav from '../AuthComponent/AuthNav'
+import AuthNav from '../Auth/AuthNav'
 import Logo from './Logo'
 
 const Navbar = () => {
