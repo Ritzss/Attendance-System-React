@@ -2,8 +2,13 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import "./Global.css";
 import ClickSpark from "./components/UI/ClickSpark";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 const App = () => {
+
+  let {pathname} = useLocation();
+
+  let hidenavRoutes = ["/login","/register"];
+
   return (
     
     <section className="" >
@@ -15,7 +20,9 @@ const App = () => {
         duration={200}
       >
         {/* Your content here */}
-        <Navbar />
+        {
+          !hidenavRoutes.includes(pathname) && <Navbar />
+        }
         <Outlet />
       </ClickSpark>
     </section>

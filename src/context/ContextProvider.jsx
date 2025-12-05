@@ -3,13 +3,16 @@
 import { createContext, useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 export const ContextApi = createContext();
+let initData = ["employee"];
 
 const ContextProvider = ({ children }) => {
+  let [visible, setVisible] = useState(false);
   let [loggin, setLoggin] = useState(false);
   let [user, setUser] = useState();
   let [data, setData] = useState();
-  let [authUser, setAuthUser] = useState();
-  let [marked,setMarked] = useState(true);
+  let [authUser, setAuthUser] = useState(initData);
+  let [marked, setMarked] = useState(true);
+  let [navTo,setNavTo] = useState();
 
   const getUsers = async () => {
     const { data, error } = await supabase.from("profiles").select("*");
@@ -42,6 +45,10 @@ const ContextProvider = ({ children }) => {
         setAuthUser,
         marked,
         setMarked,
+        visible,
+        setVisible,
+        navTo,
+        setNavTo,
       }}
     >
       {children}

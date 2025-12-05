@@ -10,7 +10,7 @@ const Home = () => {
   const { data, marked } = useContext(ContextApi);
 
   return (
-    <section className="flex flex-col">
+    <section id="home" className="flex flex-col">
       {/* MAIN WELCOME + ATTENDANCE */}
       <article className="rounded-4xl m-5 flex justify-center items-center">
         <WelcomeCard data={{ ...data, marked }} />
@@ -44,8 +44,8 @@ const Home = () => {
 
         {/* Right Grid */}
         <section className="rounded-4xl flex  flex-wrap justify-center w-[48%] p-3">
-          <MiniCard color="#fc710098" title={"Break Time"} route={"break"} />
-          <MiniCard color="#fc000098" title={"Holiday"} route={"holiday"} />
+          <MiniCard color="#fc7100" title={"Break Time"} route={"break"} />
+          <MiniCard color="#fc0000" title={"Holiday"} route={"holiday"} />
         </section>
       </article>
     </section>

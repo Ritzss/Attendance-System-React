@@ -1,23 +1,48 @@
 import React from 'react'
+import { useContext } from 'react'
 import { NavLink } from 'react-router'
+import { ContextApi } from '../../context/ContextProvider'
 
 const Body = () => {
+
+  let {authUser} = useContext(ContextApi)
+
   return (
-    <section className='flex gap-7'>
-      <header>
-        <NavLink to={'/'}>Home</NavLink>
+    <section >
+      {authUser=="employee" &&
+      <div className='flex gap-7'>
+        <header>
+        <NavLink to={'home'}>Home</NavLink>
       </header>
       <main className='flex gap-7'>
         <span>
-        <NavLink to={"/"}>Break</NavLink>
+        <NavLink to={"break"}>Break</NavLink>
         </span>
         <span>
-        <NavLink to={"/"}>Leave Portal</NavLink>
+        <NavLink to={"leaveportal"}>Leave Portal</NavLink>
         </span>
       </main>
       <footer>
-        <NavLink to={"/"}>Contact Us</NavLink>
+        <NavLink to={"contactus"}>Contact Us</NavLink>
       </footer>
+      </div>
+      }{authUser=="admin" &&
+      <div className='flex gap-7'>
+        <header>
+        <NavLink to={'home'}>Home</NavLink>
+      </header>
+      <main className='flex gap-7'>
+        <span>
+        <NavLink to={"break"}>Break Management</NavLink>
+        </span>
+        <span>
+        <NavLink to={"leaveportal"}>Leave Approval</NavLink>
+        </span>
+      </main>
+      <footer>
+        <NavLink to={"contactus"}>Attendance Management</NavLink>
+      </footer>
+      </div>}
     </section>
   )
 }

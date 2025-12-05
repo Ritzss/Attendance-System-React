@@ -74,7 +74,7 @@ const AttendanceChart = () => {
               labelStyle={{ color: "white" }}
             />
             <Legend wrapperStyle={{ color: "white" }} verticalAlign="top" />
-            <Bar dataKey="attendance" fill="#85f801" barSize={20} />
+            <Bar dataKey="attendance" fill="white" barSize={20} />
           </BarChart>
         </ResponsiveContainer>
       </div>

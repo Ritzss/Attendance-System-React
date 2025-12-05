@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
 body {
-  height: max-content;
-  background: #434343;
-  background: linear-gradient(to right, #434343, #000000);
+  background: radial-gradient(circle at 80% 30%, #a0fff2, transparent 60%),
+              radial-gradient(circle at 50% 80%, #06879e, transparent 70%),
+              #0162a3;
+  background-size: 200% 200%;
+  /* animation: liquidWave 8s ease-in-out infinite; */
 }
+
+@keyframes liquidWave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
@@ -81,10 +90,25 @@ img {
 }
 
 .glass{
-  background: #fc000098;
+  background: rgba(0, 0, 0, 0.226);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(8.7px);
 -webkit-backdrop-filter: blur(8.7px);
 border: 1px solid rgba(0, 151, 189, 0.54);
 }
+
+
+.blue-metal {
+  background: linear-gradient(to bottom,#ffffff,#a0fff2, #06879e, #0162a3);
+  border-left: none;
+  border-right: none;
+}
+
+.customshadow {
+  box-shadow:
+    inset 2px 2px 8px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 8px rgba(0,0,0,0.5),
+    0 0 30px rgba(123, 0, 255, 0.2);
+}
+
