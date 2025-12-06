@@ -15,48 +15,61 @@ const MyRoutes = createBrowserRouter([
   // --------------------------- LOGIN FIRST ---------------------------
   {
     path: "/",
-    element: <Login />, // default landing page
-    errorElement: <Error />,
+    element: <Login />,
+    errorElement: <Error />,   // Catches errors inside Login + loaders
   },
 
   {
     path: "/register",
     element: <Register />,
+    errorElement: <Error />,
   },
 
   // --------------------------- MAIN APP ROUTES ----------------------
   {
     path: "/app",
-    element: <App />, // contains Navbar + Outlet
+    element: <App />,
+    errorElement: <Error />,  // Handles layout & child errors
     children: [
+      {
+        index: true,
+        element: <Home />,
+        errorElement: <Error />,
+      },
       {
         path: "home",
         element: <Home />,
+        errorElement: <Error />,
       },
       {
         path: "home/leaveportal",
         element: <Leaveportal />,
+        errorElement: <Error />,
       },
       {
         path: "home/attendance",
         element: <Attendance />,
+        errorElement: <Error />,
       },
       {
         path: "home/break",
         element: <Break />,
+        errorElement: <Error />,
       },
       {
         path: "home/holiday",
         element: <Holiday />,
+        errorElement: <Error />,
       },
       {
         path: "home/contactus",
         element: <Contactus />,
+        errorElement: <Error />,
       },
     ],
   },
 
-  // --------------------------- FALLBACK -----------------------------
+  // --------------------------- FALLBACK (MUST STAY LAST) ---------
   {
     path: "*",
     element: <Error />,
