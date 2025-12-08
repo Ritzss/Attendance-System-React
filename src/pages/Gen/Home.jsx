@@ -7,13 +7,17 @@ import AttendanceChart from "../../components/home/AttendanceChart";
 import AttendancePie from "../../components/home/AttendancePie";
 
 const Home = () => {
-  const { data, marked } = useContext(ContextApi);
+  const { currentUser, marked } = useContext(ContextApi);
+  console.log(currentUser)
+
+
+  
 
   return (
     <section id="home" className="flex flex-col">
       {/* MAIN WELCOME + ATTENDANCE */}
       <article className="rounded-4xl m-5 flex justify-center items-center">
-        <WelcomeCard data={{ ...data, marked }} />
+        <WelcomeCard data={{ ...currentUser, marked }} />
       </article>
 
       {/* SECOND BLOCK ui-done*/}

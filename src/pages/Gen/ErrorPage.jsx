@@ -7,53 +7,79 @@ const Error = () => {
 
   console.log("ROUTER ERROR:", error);
 
-  // ----- Extract the real error info -----
   let title = "Unexpected Error";
   let message = "Something went wrong.";
+  let code = "N/A";
 
-  // If error comes from router loader/action
-  if (isRouteErrorResponse(error)) {
-    title = `${error.status} - ${error.statusText}`;
-    message = error.data || "Unknown router error.";
-  }
-  // If developer threw: throw new Error("msg")
-  else if (error instanceof Error) {
-    title = "Application Error";
-    message = error.message;
-  }
-  // If weird case
-  else if (typeof error === "string") {
-    message = error;
+  try {
+    // Case 1: Router response error
+    if (isRouteErrorResponse(error)) {
+      code = error.status || "N/A";
+      title = error.statusText || "Router Error";
+      message = error.data || "Unknown router error.";
+    }
+
+    // Case 2: Regular JS error (but check safely!)
+    else if (error && typeof error === "object" && "message" in error) {
+      code = error.code || "APP";
+      title = error.name || "Application Error";
+      message = error.message || "Unknown application error.";
+    }
+
+    // Case 3: String thrown
+    else if (typeof error === "string") {
+      code = "STRING";
+      title = "Error";
+      message = error;
+    }
+
+    // Case 4: Nothing provided
+    else if (!error) {
+      code = "NO-ERROR";
+      message = "No error details available.";
+    }
+
+    // Case 5: Weird object
+    else {
+      code = error.code || "UNKNOWN";
+      title = error.title || "Unknown Error";
+      message =
+        error.message ||
+        JSON.stringify(error, null, 2) ||
+        "No message available.";
+    }
+  } catch (e) {
+    // Prevent Error page from breaking
+    title = "Rendering Error";
+    message = e.message;
+    code = "ERROR-PAGE-FAIL";
   }
 
   return (
     <div className="flex flex-col gap-6 justify-center items-center mt-[10vh]">
       <div className="self-center flex justify-center items-center staticbg shadow-[inset_0_0_50px_rgba(0,0,0)] rounded-4xl h-[70vh] w-[70vw] overflow-hidden">
-        {/* CONTENT */}
+
         <div className="h-full w-full flex flex-col justify-center items-center">
-          {/* Title */}
-          <FuzzyText
-            baseIntensity={0.2}
-            hoverIntensity={0.5}
-            enableHover={true}
-          >
-            {title}
+
+          <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
+            Error Code: {code}
           </FuzzyText>
 
-          {/* Message */}
-          <div className="mt-10">
-            <FuzzyText
-              baseIntensity={0.2}
-              hoverIntensity={0.5}
-              enableHover={true}
-            >
+          <div className="mt-6">
+            <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
+              {title}
+            </FuzzyText>
+          </div>
+
+          <div className="mt-10 px-10 text-center">
+            <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
               {message}
             </FuzzyText>
           </div>
+
         </div>
       </div>
 
-      {/* Return Button */}
       <NavLink to={"/"}>
         <div className="ml-[50vw] return-knob">
           <div className="knob-indicator"></div>

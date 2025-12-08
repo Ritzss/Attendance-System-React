@@ -6,6 +6,7 @@ const MinicardLogin = ({
   value,
   type,
   width,
+  paddingL,
   height,
   divwidth,
   textarea = false,
@@ -78,6 +79,7 @@ const MinicardLogin = ({
                 {textarea ? (
                   <textarea
                     style={{
+                      paddingLeft: paddingL || "30px",
                       width: width || "4vh",
                       height:"4vh",
                       maxHeight:"7vh",
@@ -87,11 +89,12 @@ const MinicardLogin = ({
                     value={value}
                     onChange={handelTextArea}
                     placeholder={name}
-                    className="rounded-xl caret-transparent text-md w-[80%] h-24 outline-0 bg-[#ffffff96]"
+                    className="rounded-r-xl caret-transparent text-md w-[80%] h-24 outline-0 bg-[#ffffff96]"
                   ></textarea>
                 ) : (
                   <input
                     style={{
+                      paddingLeft: paddingL || "30px",
                       width: width || "",
                     }}
                     id={name}
@@ -100,7 +103,7 @@ const MinicardLogin = ({
                     onChange={onChange}
                     placeholder={name}
                     type={type || "text"}
-                    className="rounded-xl caret-transparent text-md w-[80%] outline-0 bg-[#ffffff96]"
+                    className="rounded-r-xl caret-transparent text-md w-[80%] outline-0 bg-[#ffffff96]"
                   />
                 )}
               </div>

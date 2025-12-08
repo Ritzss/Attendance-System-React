@@ -32,11 +32,6 @@ const MyRoutes = createBrowserRouter([
     errorElement: <Error />,  // Handles layout & child errors
     children: [
       {
-        index: true,
-        element: <Home />,
-        errorElement: <Error />,
-      },
-      {
         path: "home",
         element: <Home />,
         errorElement: <Error />,

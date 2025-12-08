@@ -5,11 +5,11 @@ import { ContextApi } from '../../context/ContextProvider'
 
 const Body = () => {
 
-  let {authUser} = useContext(ContextApi)
+  let {authUser,loggin} = useContext(ContextApi)
 
   return (
     <section >
-      {authUser=="employee" &&
+      {loggin && authUser=="employee" &&
       <div className='flex gap-7'>
         <header>
         <NavLink to={'home'}>Home</NavLink>
@@ -26,7 +26,7 @@ const Body = () => {
         <NavLink to={"contactus"}>Contact Us</NavLink>
       </footer>
       </div>
-      }{authUser=="admin" &&
+      }{loggin && authUser=="admin" &&
       <div className='flex gap-7'>
         <header>
         <NavLink to={'home'}>Home</NavLink>

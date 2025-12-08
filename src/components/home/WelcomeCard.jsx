@@ -26,7 +26,7 @@ const WelcomeCard = ({ data }) => {
 
         <div className="rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] -mt-[10vh] ml-[4vh] w-[45vw] h-[30vh] p-5">
           <h1 className="text-white text-3xl text-right">
-            Welcome Back, {data?.name}!
+            Welcome Back, {data?.Name}!
           </h1>
           <p className="text-white text-lg mt-5">
             Welcome back to the flow! Your data is synced, your tasks are ready,

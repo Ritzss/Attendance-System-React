@@ -4,14 +4,32 @@ import MinicardLogin from "../../components/Auth/MinicardLogin";
 import { useContext } from "react";
 import { ContextApi } from "../../context/ContextProvider";
 import AuthLogo from "../../components/Auth/AuthLogo";
-import Authbuttons from "../../components/Auth/Authbuttons";
 import { NavLink, useNavigate } from "react-router";
 import ClickSpark from "../../components/UI/ClickSpark";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
+import {
+  MdOutlineDriveFileRenameOutline,
+  MdOutlineMail,
+  MdOutlinePassword,
+} from "react-icons/md";
+import { IoMdContact } from "react-icons/io";
+import { GiOfficeChair } from "react-icons/gi";
+import { FaAddressCard, FaUserTie } from "react-icons/fa";
+import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 
 const Register = () => {
-  let { initRegistration, form, setForm } = useContext(ContextApi);
+  let {
+    initRegistration,
+    data,
+    registerForm,
+    setRegisterForm,
+    setVisible,
+    visible,
+    visible2,
+    setVisible2,
+    RegisterUser,
+  } = useContext(ContextApi);
   let navigate = useNavigate();
 
   let handleChange = (e) => {
@@ -20,36 +38,76 @@ const Register = () => {
     if (type === "tel") {
       value = value.replace(/\D/g, ""); // keep only digits
     }
-    setForm((prev) => {
+
+    setRegisterForm((prev) => {
       const newForm = { ...prev, [name]: value };
 
       // ---- CHECK MATCH AFTER STATE IS UPDATED ----
       if (name === "Confirm_Name") {
         if (value === prev.Name) {
           toast.success("Names match");
-          setForm({...prev,[name]:value});
-          console.log(form,[name],value);
-          
+          setRegisterForm({ ...prev, [name]: value });
         } else {
           toast.error("Names don't match");
         }
       }
 
+      if (name === "Confirm_Password") {
+        if (value === prev.Password) {
+          toast.success("Password Match");
+          setRegisterForm({ ...prev, [name]: value });
+        } else {
+          toast.error("Password don't match");
+        }
+      }
+      if (name === "Email") {
+        console.log(value);
+        console.log(data);
+
+        data.map((ele) => {
+          if (value !== ele.Email) {
+            setRegisterForm({ ...prev, [name]: value });
+          } else {
+            setRegisterForm({ ...prev, [name]: "" });
+            toast.error("Email Exists");
+          }
+        });
+      }
+
       return newForm;
     });
   };
-  let handleRegister = (e) => {
+  let handleRegister = async (e) => {
     e.preventDefault();
+    console.log(registerForm);
 
-    if(form.Name !== form.Confirm_Name){
-      toast.error("Bhai yha to sahi daal info")
+    const isEmpty = Object.values(registerForm).some(
+      (val) => val.trim() === ""
+    );
+
+    if (registerForm.Name !== registerForm.Confirm_Name) {
+      toast.error("Bhai yha to sahi daal info");
       return;
-    }else{
-      
+    } else {
+      toast.success("Shabash mere sheer");
     }
-
-    // navigate("/");
-    setForm(initRegistration);
+    if (registerForm.Password !== registerForm.Confirm_Password) {
+      toast.error("Bhai password visible kro");
+      return;
+    } else {
+      toast.success("Shabash mere sheer");
+    }
+    if (isEmpty) {
+      toast.error("please fill all details");
+      return;
+    }
+    try {
+      await RegisterUser(registerForm);
+      navigate("/");
+      setRegisterForm(initRegistration);
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
 
   return (
@@ -82,91 +140,110 @@ const Register = () => {
                 id="heading"
                 className=" flex justify-center items-center"
               >
-                <div className="text-4xl text-[#3b3b3bcb] p-3 pt-1 bg-[#ffffff99] shadow-[inset_0_0_20px_5px_rgba(1,129,189)] w-[45%] text-center rounded-3xl">
+                <div className="text-4xl text-[#3b3b3bcb] p-3 pt-1  bg-[#ffffff99] shadow-[inset_0_0_20px_5px_rgba(1,129,189)] w-[45%] text-center rounded-3xl">
                   <p>Register</p>
                 </div>
               </header>
               <form
                 id="leftsideRegistration"
                 action=""
-                onSubmit={handleRegister}
                 className="flex flex-col justify-evenly items-center"
               >
                 <div className="flex flex-wrap justify-center">
-                  <div>
+                  <div key={"name_attribute"} className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <MdOutlineDriveFileRenameOutline />
+                    </div>
                     <MinicardLogin
                       key={0}
                       label={"Name :"}
                       name={"Name"}
-                      value={form.Name}
+                      value={registerForm.Name}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div key={"Confirmname_attribute"} className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <MdOutlineDriveFileRenameOutline />
+                    </div>
                     <MinicardLogin
                       label={"Confirm Name :"}
                       key={1}
                       name={"Confirm_Name"}
-                      value={form.Confirm_Name}
+                      value={registerForm.Confirm_Name}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <MdOutlineMail />
+                    </div>
                     <MinicardLogin
                       key={3}
                       label={"Email :"}
                       type={"email"}
                       name={"Email"}
-                      value={form.Email}
+                      value={registerForm.Email}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <IoMdContact />
+                    </div>
                     <MinicardLogin
                       key={2}
                       label={"Contact :"}
                       name={"Contact"}
-                      value={form.Contact}
+                      value={registerForm.Contact}
                       type={"tel"}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <GiOfficeChair />
+                    </div>
                     <MinicardLogin
                       key={4}
                       label={"Department :"}
                       name={"Department"}
-                      value={form.Department}
+                      value={registerForm.Department}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      {" "}
+                      <FaUserTie />
+                    </div>
                     <MinicardLogin
                       key={5}
                       label={"Designation :"}
                       name={"Designation"}
-                      value={form.Designation}
+                      value={registerForm.Designation}
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
                     <MinicardLogin
+                      top-2
                       key={6}
                       label={"Role :"}
                       name={"Role"}
-                      value={form.Role}
+                      value={registerForm.Role}
                       onChange={handleChange}
                       type={"radio"}
                       width={"100%"}
@@ -176,12 +253,15 @@ const Register = () => {
                       ]}
                     />
                   </div>
-                  <div>
+                  <div name="AddressDiv" className="relative">
+                    <div className="absolute top-[5.9vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[4vh] w-[3vw]">
+                      <FaAddressCard />
+                    </div>
                     <MinicardLogin
                       key={13}
                       label={"Address:"}
                       name={"Address"}
-                      value={form.Address2}
+                      value={registerForm.Address}
                       onChange={handleChange}
                       textarea={true}
                       // height={"4vh"}
@@ -189,34 +269,62 @@ const Register = () => {
                       width={"100%"}
                     />
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute top-[5.87vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <MdOutlinePassword />
+                    </div>
+
                     <MinicardLogin
-                      key={7}
+                      key={8}
                       label={"Password :"}
                       name={"Password"}
-                      value={form.Password}
+                      type={visible ? "text" : "password"}
+                      value={registerForm.Password}
+                      paddingL={"0px"}
                       onChange={handleChange}
                       divwidth={"40vh"}
-                      width={"100%"}
+                      width={"80%"}
                     />
+                    <div
+                      className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
+                      onClick={() => {
+                        setVisible(!visible);
+                      }}
+                    >
+                      {visible ? <RiEyeFill /> : <RiEyeCloseFill />}
+                    </div>
                   </div>
-                  <div>
+                  <div className="relative">
+                    <div className="absolute text-xl top-[5.87vh] left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                      <MdOutlinePassword />
+                    </div>
                     <MinicardLogin
                       key={8}
                       label={"Confirm Password :"}
                       name={"Confirm_Password"}
-                      value={form.Confirm_Password}
+                      type={visible2 ? "text" : "password"}
+                      value={registerForm.Confirm_Password}
+                      paddingL={"0px"}
                       onChange={handleChange}
                       divwidth={"40vh"}
-                      width={"100%"}
+                      width={"80%"}
                     />
+                    <div
+                      className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
+                      onClick={() => {
+                        setVisible2(!visible2);
+                      }}
+                    >
+                      {visible2 ? <RiEyeFill /> : <RiEyeCloseFill />}
+                    </div>
                   </div>
                 </div>
                 <section className="flex-col flex w-full">
                   <header className="flex justify-center items-center">
                     <button
-                      type="submit"
-                      className="w-[35%] h-[6vh] text-center bg-[#ffffff99] rounded-xl flex justify-center items-center shadow-[inset_0_0_20px_3px_rgba(0,255,0)] hover:shadow-[inset_0_0_0] hover:bg-[#00ff00] transition-colors duration-300"
+                      disabled={Object.values(registerForm).some((v) => v === "")}
+                      onClick={handleRegister}
+                      className="w-[35%] h-[6vh] text-2xl text-center bg-[#ffffff99] rounded-xl flex justify-center items-center shadow-[inset_0_0_20px_3px_rgba(0,255,0)] hover:shadow-[inset_0_0_0] hover:bg-[#00ff00] transition-colors duration-300"
                     >
                       Register
                     </button>

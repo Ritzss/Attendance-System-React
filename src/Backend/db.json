@@ -1,3 +1,30 @@
 {
-    "users":[]
+  "users": [
+    {
+      "id": "6cb5",
+      "Name": "ritanshu babuta",
+      "Confirm_Name": "ritanshu babuta",
+      "Email": "ritanshubabuta399@gmail.com",
+      "Address": "House No.-371,MEHARAULI DELHI-110022",
+      "Department": "IT",
+      "Designation": "Associate Fullstack Developer",
+      "Role": "admin",
+      "Contact": "9958186814",
+      "Password": "Ritanshu123!",
+      "Confirm_Password": "Ritanshu123!"
+    },
+    {
+      "id": "023f",
+      "Name": "Roshan",
+      "Email": "roshan@gmail.com",
+      "Address": "AyaNagar",
+      "Department": "IT",
+      "Designation": "Graphic Designer",
+      "Role": "employee",
+      "Contact": "9933828381",
+      "Password": "Roshan123!",
+      "Confirm_Name": "Roshan",
+      "Confirm_Password": "Roshan123!"
+    }
+  ]
 }
