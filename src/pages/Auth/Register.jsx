@@ -17,6 +17,7 @@ import { IoMdContact } from "react-icons/io";
 import { GiOfficeChair } from "react-icons/gi";
 import { FaAddressCard, FaUserTie } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
+import bcrypt from "bcryptjs";
 
 const Register = () => {
   let {
@@ -78,37 +79,58 @@ const Register = () => {
     });
   };
   let handleRegister = async (e) => {
-    e.preventDefault();
-    console.log(registerForm);
+  e.preventDefault();
 
-    const isEmpty = Object.values(registerForm).some(
-      (val) => val.trim() === ""
-    );
+  console.log(registerForm);
 
-    if (registerForm.Name !== registerForm.Confirm_Name) {
-      toast.error("Bhai yha to sahi daal info");
-      return;
-    } else {
-      toast.success("Shabash mere sheer");
-    }
-    if (registerForm.Password !== registerForm.Confirm_Password) {
-      toast.error("Bhai password visible kro");
-      return;
-    } else {
-      toast.success("Shabash mere sheer");
-    }
-    if (isEmpty) {
-      toast.error("please fill all details");
-      return;
-    }
-    try {
-      await RegisterUser(registerForm);
-      navigate("/");
-      setRegisterForm(initRegistration);
-    } catch (err) {
-      toast.error(err.message);
-    }
+  const {
+    Name,
+    Confirm_Name,
+    Email,
+    Password,
+    Confirm_Password,
+    ...rest
+  } = registerForm;
+
+  // Empty check
+  const isEmpty = Object.values(registerForm).some((val) => val.trim() === "");
+  if (isEmpty) {
+    toast.error("Please fill all details");
+    return;
+  }
+
+  // Name match check
+  if (Name !== Confirm_Name) {
+    toast.error("Name and confirm name do not match");
+    return;
+  }
+
+  // Password match check
+  if (Password !== Confirm_Password) {
+    toast.error("Password and confirm password do not match");
+    return;
+  }
+
+  // 🔒 SECURE: Hash password before sending
+  const salt = bcrypt.genSaltSync(10);
+  const hashedPassword = bcrypt.hashSync(Password, salt);
+
+  const payload = {
+    ...rest,
+    Name,
+    Email,
+    password: hashedPassword, // encrypted
   };
+
+  try {
+    await RegisterUser(payload); // send hashed pass
+    toast.success("Registration Successful!");
+    navigate("/");
+    setRegisterForm(initRegistration);
+  } catch (err) {
+    toast.error(err.message);
+  }
+};
 
   return (
     <ClickSpark

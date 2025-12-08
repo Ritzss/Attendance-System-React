@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "back":"nodemon run server.js",
+    "database":"dlx json-server --watch db.json --port 3001"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.86.0",
@@ -16,7 +18,9 @@
     "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
     "chart.js": "^4.5.1",
+    "crpyto": "0.0.1-security",
     "dayjs": "^1.11.19",
+    "express": "^5.2.1",
     "face-api.js": "^0.22.2",
     "gsap": "^3.13.0",
     "json-server": "1.0.0-beta.3",
