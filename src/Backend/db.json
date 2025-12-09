@@ -1,30 +1,26 @@
 {
   "users": [
     {
-      "id": "6cb5",
-      "Name": "ritanshu babuta",
-      "Confirm_Name": "ritanshu babuta",
-      "Email": "ritanshubabuta399@gmail.com",
-      "Address": "House No.-371,MEHARAULI DELHI-110022",
+      "id": "878c",
+      "Address": "Mehrauli,New Delhi",
       "Department": "IT",
-      "Designation": "Associate Fullstack Developer",
+      "Designation": "Associate Developer",
       "Role": "admin",
       "Contact": "9958186814",
-      "Password": "Ritanshu123!",
-      "Confirm_Password": "Ritanshu123!"
+      "Name": "Ritanshu Babuta",
+      "Email": "ritanshubabuta399@gmail.com",
+      "password": "$2b$10$bEhOiokCmUcoD0AwsNT9LuFfH.sK1NHZI3K7UEe5AE5PtcD3MTmD."
     },
     {
-      "id": "023f",
-      "Name": "Roshan",
-      "Email": "roshan@gmail.com",
-      "Address": "AyaNagar",
+      "id": "6ac9",
+      "Address": "Aya Nagar,Delhi",
       "Department": "IT",
       "Designation": "Graphic Designer",
       "Role": "employee",
-      "Contact": "9933828381",
-      "Password": "Roshan123!",
-      "Confirm_Name": "Roshan",
-      "Confirm_Password": "Roshan123!"
+      "Contact": "9958182344",
+      "Name": "Roushan",
+      "Email": "Roushan@email.com",
+      "password": "$2b$10$ywOJi0YKsDMN82r9Ldu3NewJAlzsxGwuycWyjYfNuzejFHoqmR7ki"
     }
   ]
 }

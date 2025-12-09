@@ -8,16 +8,17 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "back":"nodemon run server.js",
-    "database":"dlx json-server --watch db.json --port 3001"
+    "back": "nodemon run server.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@supabase/supabase-js": "^2.86.0",
     "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/vite": "^4.1.17",
     "axios": "^1.13.2",
     "bcryptjs": "^3.0.3",
     "chart.js": "^4.5.1",
+    "cors": "^2.8.5",
     "crpyto": "0.0.1-security",
     "dayjs": "^1.11.19",
     "express": "^5.2.1",
@@ -25,6 +26,7 @@
     "gsap": "^3.13.0",
     "json-server": "1.0.0-beta.3",
     "next": "^16.0.6",
+    "nodemailer": "^7.0.11",
     "ogl": "^1.0.11",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",

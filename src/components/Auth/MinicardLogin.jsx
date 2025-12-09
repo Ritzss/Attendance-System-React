@@ -8,6 +8,7 @@ const MinicardLogin = ({
   width,
   paddingL,
   height,
+  autocomplete,
   divwidth,
   textarea = false,
   onChange,
@@ -102,6 +103,7 @@ const MinicardLogin = ({
                     value={value}
                     onChange={onChange}
                     placeholder={name}
+                    autoComplete={autocomplete || "off"}
                     type={type || "text"}
                     className="rounded-r-xl caret-transparent text-md w-[80%] outline-0 bg-[#ffffff96]"
                   />

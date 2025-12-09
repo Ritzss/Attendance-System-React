@@ -3,7 +3,7 @@ import MinicardLogin from "../../components/Auth/MinicardLogin";
 import { ContextApi } from "../../context/ContextProvider";
 import { MdOutlineMail, MdOutlinePassword } from "react-icons/md";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import ClickSpark from "../../components/UI/ClickSpark";
 import AuthLogo from "../../components/Auth/AuthLogo";
@@ -12,8 +12,17 @@ import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { data, loginForm, setLoginForm, visible, setVisible,loginInit,setCurrentUser, setLoggin, setAuthUser, } =
-    useContext(ContextApi);
+  const {
+    loginForm,
+    setLoginForm,
+    visible,
+    setMarked,
+    setVisible,
+    loginInit,
+    setCurrentUser,
+    setLoggin,
+    setAuthUser,
+  } = useContext(ContextApi);
   let navigate = useNavigate();
 
   // ✔ input change handler
@@ -26,43 +35,38 @@ const Login = () => {
   };
 
   // ✔ login handler
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+
     if (!loginForm.Email || !loginForm.Password || !loginForm.Role) {
       return toast.error("Please fill all fields");
     }
 
-    const user = data.find((u) => u.Email === loginForm.Email);
-    console.log(user.Name);
-    
-    setCurrentUser(user);
+    const res = await fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(loginForm),
+    });
 
-    if (!user) {
-      return toast.error("User not found!");
+    const result = await res.json();
+
+    if (!result.success) {
+      return toast.error(result.message);
     }
 
-    if (user.Password !== loginForm.Password) {
-      return toast.error("Incorrect password!");
+    setCurrentUser(result.user);
+
+    if (result.user.Role === "admin") {
+      setAuthUser("admin");
+    } else {
+      setAuthUser("employee");
     }
 
-    if (user.Role !== loginForm.Role) {
-      return toast.error("Role mismatch!");
-    }
-
-    if(user.Role === "admin"){
-      setAuthUser("admin")
-      setLoggin(true);
-    }else if(user.Role === "employee"){
-      setAuthUser("employee")
-      setLoggin(true);
-    }
-    
-    toast.success("Login Successful!");
-
-    // Navigate after success
-    setLoginForm(loginInit)
-    navigate("/app/home")
-
+    setLoggin(true);
+    toast.success("Login successful!");
+    setMarked(true);
+    setLoginForm(loginInit);
+    navigate("/app/home");
   };
 
   return (
@@ -96,7 +100,6 @@ const Login = () => {
 
             {/* ===== Inputs ===== */}
             <main id="inputs" className="flex flex-col justify-center h-[55%]">
-
               {/* Email */}
               <header className="relative">
                 <div className="absolute bottom-[1.4vh] flex justify-center items-center w-[2.9vw] text-[26px] h-[4vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
@@ -156,7 +159,10 @@ const Login = () => {
             </main>
 
             {/* ===== Buttons ===== */}
-            <footer id="buttons" className="flex justify-between flex-col h-[25%]">
+            <footer
+              id="buttons"
+              className="flex justify-between flex-col h-[25%]"
+            >
               <Authbuttons handleLogin={handleLogin} />
 
               {/* Bottom links */}

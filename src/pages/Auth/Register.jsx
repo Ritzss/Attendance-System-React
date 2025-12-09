@@ -4,7 +4,7 @@ import MinicardLogin from "../../components/Auth/MinicardLogin";
 import { useContext } from "react";
 import { ContextApi } from "../../context/ContextProvider";
 import AuthLogo from "../../components/Auth/AuthLogo";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router-dom";
 import ClickSpark from "../../components/UI/ClickSpark";
 import toast from "react-hot-toast";
 import { Toaster } from "react-hot-toast";
@@ -166,9 +166,10 @@ const Register = () => {
                   <p>Register</p>
                 </div>
               </header>
-              <form
+              <form 
                 id="leftsideRegistration"
-                action=""
+                action="POST"
+                autoComplete="off"
                 className="flex flex-col justify-evenly items-center"
               >
                 <div className="flex flex-wrap justify-center">
@@ -306,6 +307,7 @@ const Register = () => {
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"80%"}
+                      autocomplete={"new-password"}
                     />
                     <div
                       className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
@@ -330,6 +332,7 @@ const Register = () => {
                       onChange={handleChange}
                       divwidth={"40vh"}
                       width={"80%"}
+                      autocomplete={"new-password"}
                     />
                     <div
                       className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"

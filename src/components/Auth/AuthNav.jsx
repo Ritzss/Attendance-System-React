@@ -27,11 +27,11 @@ const AuthNav = () => {
       ) : (
         <span className="flex gap-2">
           <span>
-            <NavLink to={"login"}>Login</NavLink>
+            <NavLink to={"/"}>Login</NavLink>
           </span>
           /
           <span>
-            <NavLink to={"register"}>Register</NavLink>
+            <NavLink to={"/register"}>Register</NavLink>
           </span>
         </span>
       )}

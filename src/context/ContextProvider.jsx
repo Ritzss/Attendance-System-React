@@ -1,5 +1,4 @@
 /* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react-hooks/set-state-in-effect */
 
 import { createContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -14,7 +13,7 @@ const loginInit = {
 
 const registerInit = {
   Name: "",
-  Confirm_Name:"",
+  Confirm_Name: "",
   Email: "",
   Address: "",
   Department: "",
@@ -22,7 +21,7 @@ const registerInit = {
   Role: "",
   Contact: "",
   Password: "",
-  Confirm_Password:"",
+  Confirm_Password: "",
 };
 
 const ContextProvider = ({ children }) => {
@@ -33,21 +32,23 @@ const ContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
 
   const [authUser, setAuthUser] = useState(null);
-  const [marked, setMarked] = useState(true);
+  const [marked, setMarked] = useState(false);
   const [navTo, setNavTo] = useState();
 
-  // ⭐ Separate states
   const [loginForm, setLoginForm] = useState(loginInit);
   const [registerForm, setRegisterForm] = useState(registerInit);
 
   const [loggin, setLoggin] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
 
-  // Fetch API
+  // ---------------------------------------------------------
+  // FETCH USERS
+  // ---------------------------------------------------------
   const getUsers = async () => {
     try {
-      const res = await fetch("http://localhost:5000/users");
-      let data = await res.json();
-      setData(data);
+      const res = await fetch("http://localhost:3001/users");
+      let users = await res.json();
+      setData(users);
     } catch (err) {
       toast.error(err.message);
     }
@@ -57,34 +58,92 @@ const ContextProvider = ({ children }) => {
     getUsers();
   }, []);
 
+  // ---------------------------------------------------------
+  // REGISTER USER
+  // ---------------------------------------------------------
+  const RegisterUser = async (payload) => {
+    try {
+      const res = await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Failed to register user");
+
+      toast.success("Registration successful");
+      getUsers(); // refresh list
+      return true;
+    } catch (err) {
+      toast.error(err.message);
+      return false;
+    }
+  };
+
+  // ---------------------------------------------------------
+  // LOGIN USER
+  // ---------------------------------------------------------
+  const LoginUser = async () => {
+    const { Email, Password } = loginForm;
+
+    const found = data.find(
+      (u) => u.Email === Email && u.Password === Password
+    );
+
+    if (!found) {
+      toast.error("Invalid email or password");
+      return false;
+    }
+
+    setAuthUser(found);
+    setCurrentUser(found);
+    toast.success("Login successful");
+    return true;
+  };
+
+  // ---------------------------------------------------------
+  // PROVIDER EXPORT
+  // ---------------------------------------------------------
   return (
     <ContextApi.Provider
       value={{
-        // forms
+        // Forms
         loginForm,
         setLoginForm,
         registerForm,
         setRegisterForm,
         loginInit,
-        registerInit,
+        initRegistration: registerInit,
 
-        // others
+        // User state
         currentUser,
         setCurrentUser,
-        loggin,
-        setLoggin,
-        data,
-        setData,
         authUser,
         setAuthUser,
-        marked,
-        setMarked,
+
+        // Data
+        data,
+        setData,
+
+        // UI states
         visible,
         setVisible,
         visible2,
         setVisible2,
+        marked,
+        setMarked,
         navTo,
         setNavTo,
+
+        // Auth actions
+        LoginUser,
+        RegisterUser,
+
+        // misc
+        loggin,
+        setLoggin,
+        showOtp,
+        setShowOtp,
       }}
     >
       {children}

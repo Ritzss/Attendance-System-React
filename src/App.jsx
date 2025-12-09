@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import "./Global.css";
 import ClickSpark from "./components/UI/ClickSpark";
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation } from "react-router-dom";
 const App = () => {
 
   let {pathname} = useLocation();

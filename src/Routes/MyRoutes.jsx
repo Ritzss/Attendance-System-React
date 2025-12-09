@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Login from "../pages/Auth/Login";
 import Home from "../pages/Gen/Home";
@@ -10,26 +10,62 @@ import Leaveportal from "../pages/Services/Leaveportal";
 import Attendance from "../pages/Services/Attendance";
 import Break from "../pages/Services/Break";
 import Holiday from "../pages/Services/Holiday";
+import PrivateRoutes from "./PrivateRoutes";
+import PublicRoutes from "./PublicRoutes";
+import ForgotPassword from "../pages/Auth/ForgotPassword";
+import ResetPassword from "../pages/Auth/ResetPassword";
 
 const MyRoutes = createBrowserRouter([
   // --------------------------- LOGIN FIRST ---------------------------
   {
     path: "/",
-    element: <Login />,
-    errorElement: <Error />,   // Catches errors inside Login + loaders
+    element: (
+      <PublicRoutes>
+        <Login />
+      </PublicRoutes>
+    ),
+    errorElement: <Error />, // Catches errors inside Login + loaders
   },
 
   {
     path: "/register",
-    element: <Register />,
+    element: (
+      <PublicRoutes>
+        <Register />
+      </PublicRoutes>
+    ),
     errorElement: <Error />,
+  },
+
+  {
+    path:"/forgot_password",
+    element:(
+      <PublicRoutes>
+        <ForgotPassword />
+      </PublicRoutes>
+    ),
+    errorElement:<Error />,
+  },
+
+  {
+    path:"/reset_password",
+    element:(
+      <PublicRoutes>
+        <ResetPassword />
+      </PublicRoutes>
+    ),
+    errorElement:<Error />,
   },
 
   // --------------------------- MAIN APP ROUTES ----------------------
   {
     path: "/app",
-    element: <App />,
-    errorElement: <Error />,  // Handles layout & child errors
+    element: (
+      <PrivateRoutes>
+        <App />
+      </PrivateRoutes>
+    ),
+    errorElement: <Error />, // Handles layout & child errors
     children: [
       {
         path: "home",
@@ -37,27 +73,27 @@ const MyRoutes = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: "home/leaveportal",
+        path: "leaveportal",
         element: <Leaveportal />,
         errorElement: <Error />,
       },
       {
-        path: "home/attendance",
+        path: "attendance",
         element: <Attendance />,
         errorElement: <Error />,
       },
       {
-        path: "home/break",
+        path: "break",
         element: <Break />,
         errorElement: <Error />,
       },
       {
-        path: "home/holiday",
+        path: "holiday",
         element: <Holiday />,
         errorElement: <Error />,
       },
       {
-        path: "home/contactus",
+        path: "contactus",
         element: <Contactus />,
         errorElement: <Error />,
       },

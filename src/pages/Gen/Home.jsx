@@ -37,19 +37,19 @@ const Home = () => {
           <MiniCard
             color="#0097bd9f"
             title={"Leave Portal"}
-            route={"leaveportal"}
+            route={"/app/leaveportal"}
           />
           <MiniCard
             color="#ba01d39f"
             title={"Attendance"}
-            route={"attendance"}
+            route={"/app/attendance"}
           />
         </section>
 
         {/* Right Grid */}
         <section className="rounded-4xl flex  flex-wrap justify-center w-[48%] p-3">
-          <MiniCard color="#fc7100" title={"Break Time"} route={"break"} />
-          <MiniCard color="#fc0000" title={"Holiday"} route={"holiday"} />
+          <MiniCard color="#fc7100" title={"Break Time"} route={"/app/break"} />
+          <MiniCard color="#fc0000" title={"Holiday"} route={"/app/holiday"} />
         </section>
       </article>
     </section>
