@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import "./Global.css";
 import ClickSpark from "./components/UI/ClickSpark";
 import { Outlet, useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 const App = () => {
 
   let {pathname} = useLocation();
@@ -12,6 +13,7 @@ const App = () => {
   return (
     
     <section className="" >
+      <Toaster />
       <ClickSpark
         sparkColor="#fff"
         sparkSize={10}

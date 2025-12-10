@@ -105,6 +105,18 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   border-right: none;
 }
 
+.black-metal {
+  background: linear-gradient(to bottom,#ffffff, #353535, #000000);
+  border-left: none;
+  border-right: none;
+}
+
+.combine-metal {
+  background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2 ,#ffffffa1, #353535, #000000);
+  border-left: none;
+  border-right: none;
+}
+
 .customshadow {
   box-shadow:
     inset 2px 2px 8px rgba(0, 0, 0, 0.2),

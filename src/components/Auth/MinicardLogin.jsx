@@ -90,7 +90,7 @@ const MinicardLogin = ({
                     value={value}
                     onChange={handelTextArea}
                     placeholder={name}
-                    className="rounded-r-xl caret-transparent text-md w-[80%] h-24 outline-0 bg-[#ffffff96]"
+                    className="rounded-r-xl text-black caret-transparent text-md w-[80%] h-24 outline-0 bg-[#ffffff96]"
                   ></textarea>
                 ) : (
                   <input
@@ -105,7 +105,7 @@ const MinicardLogin = ({
                     placeholder={name}
                     autoComplete={autocomplete || "off"}
                     type={type || "text"}
-                    className="rounded-r-xl caret-transparent text-md w-[80%] outline-0 bg-[#ffffff96]"
+                    className="rounded-r-xl caret-transparent text-black text-md w-[80%] outline-0 bg-[#ffffff96]"
                   />
                 )}
               </div>

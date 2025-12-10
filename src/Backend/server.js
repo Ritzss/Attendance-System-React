@@ -42,7 +42,7 @@ app.post("/register",async(req, res)=>{
 app.post("/login", (req, res) => {
   const { Email, Password, Role } = req.body;
 
-  const db = JSON.parse(fs.readFileSync("./db.json"));
+  const db = JSON.parse(fs.readFileSync("./src/backend/db.json"));
   const user = db.users.find((u) => u.Email === Email);
 
   if (!user) {

@@ -24,12 +24,22 @@ const registerInit = {
   Confirm_Password: "",
 };
 
+const dateInit = {
+  date: "",
+  status: "",
+};
+
 const ContextProvider = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
 
   const [currentUser, setCurrentUser] = useState(null);
   const [data, setData] = useState([]);
+  const [loginData, setLoginData] = useState([]);
+  const [leaves, setLeaves] = useState([]);
+  const [breakData, setBreakData] = useState([]);
+  const [storageData, setStorageData] = useState([]);
+  const [attendance, setAttendance] = useState([]);
 
   const [authUser, setAuthUser] = useState(null);
   const [marked, setMarked] = useState(false);
@@ -37,9 +47,11 @@ const ContextProvider = ({ children }) => {
 
   const [loginForm, setLoginForm] = useState(loginInit);
   const [registerForm, setRegisterForm] = useState(registerInit);
+  const [attendMark, setAttendMark] = useState(dateInit);
 
   const [loggin, setLoggin] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
+  const [email, setEmail] = useState("");
 
   // ---------------------------------------------------------
   // FETCH USERS
@@ -54,8 +66,64 @@ const ContextProvider = ({ children }) => {
     }
   };
 
+  const getAttendance = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/attendance");
+      let attendance = await res.json();
+      setAttendance(attendance);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
+
+  const getLogin = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/login");
+      let loginD = await res.json();
+      setLoginData(loginD);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
+
+  
+  const getLeaves = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/leaves");
+      let LeavesD = await res.json();
+      setLeaves(LeavesD);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
+
+  const getBreakData = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/break");
+      let breakD = await res.json();
+      setBreakData(breakD);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
+
+  const getStorage = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/storage");
+      let storage = await res.json();
+      setStorageData(storage);
+    } catch (err) {
+      toast.err(err.message);
+    }
+  };
+
   useEffect(() => {
     getUsers();
+    getAttendance();
+    getBreakData();
+    getLeaves();
+    getLogin();
+    getStorage();
   }, []);
 
   // ---------------------------------------------------------
@@ -110,10 +178,13 @@ const ContextProvider = ({ children }) => {
         // Forms
         loginForm,
         setLoginForm,
+        loginInit,
         registerForm,
         setRegisterForm,
-        loginInit,
         initRegistration: registerInit,
+        attendMark,
+        setAttendMark,
+        dateInit,
 
         // User state
         currentUser,
@@ -124,6 +195,16 @@ const ContextProvider = ({ children }) => {
         // Data
         data,
         setData,
+        attendance,
+        setAttendance,
+        loginData,
+        setLoginData,
+        leaves,
+        setLeaves,
+        breakData,
+        setBreakData,
+        storageData,
+        setStorageData,
 
         // UI states
         visible,
@@ -144,6 +225,8 @@ const ContextProvider = ({ children }) => {
         setLoggin,
         showOtp,
         setShowOtp,
+        email,
+        setEmail,
       }}
     >
       {children}

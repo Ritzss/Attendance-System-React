@@ -21,6 +21,9 @@ const Body = () => {
         <span>
         <NavLink to={"leaveportal"}>Leave Portal</NavLink>
         </span>
+        <span>
+        <NavLink to={"holiday"}>Holiday</NavLink>
+        </span>
       </main>
       <footer>
         <NavLink to={"contactus"}>Contact Us</NavLink>

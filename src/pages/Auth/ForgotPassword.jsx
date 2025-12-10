@@ -14,9 +14,8 @@ const ForgotPassword = () => {
   const initialOtp = { box1: "", box2: "", box3: "", box4: "" };
 
   const navigate = useNavigate();
-  const { data,showOtp,setShowOtp } = useContext(ContextApi);
+  const { data,showOtp,setShowOtp,email, setEmail } = useContext(ContextApi);
 
-  const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(initialOtp);
   const [generatedOtp, setGeneratedOtp] = useState("");
 
