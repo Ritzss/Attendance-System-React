@@ -1,6 +1,7 @@
 import React from "react";
 import FuzzyText from "../../components/UI/FuzzyText";
 import { NavLink, useRouteError, isRouteErrorResponse } from "react-router";
+//! HAVE TO MAKE IT RESPONSIVE
 
 const Error = () => {
   const error = useRouteError();
@@ -56,7 +57,7 @@ const Error = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 justify-center items-center mt-[10vh]">
+    <div className="ErrorBlock flex flex-col gap-6 justify-center items-center mt-[10vh]">
       <div className="self-center flex justify-center items-center staticbg shadow-[inset_0_0_50px_rgba(0,0,0)] rounded-4xl h-[70vh] w-[70vw] overflow-hidden">
 
         <div className="h-full w-full flex flex-col justify-center items-center">

@@ -8,15 +8,10 @@ body {
   /* animation: liquidWave 8s ease-in-out infinite; */
 }
 
-@keyframes liquidWave {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
-
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
 img {
   backface-visibility: hidden;
 }
@@ -27,29 +22,6 @@ img {
     repeating-conic-gradient(#000 0 0.0001%,#fff 0 0.0002%) 60% 60%/2500px 2500px;
   background-blend-mode: difference;
   animation: b .2s infinite alternate;
-}
-@keyframes b{
-  100% {background-position: 50% 0, 60% 50%}
-}
-
-/* Define the infinite rotation animation */
-@keyframes infinite-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rewind-signal {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-  
 }
 
 .return-knob {
@@ -98,7 +70,6 @@ backdrop-filter: blur(8.7px);
 border: 1px solid rgba(0, 151, 189, 0.54);
 }
 
-
 .blue-metal {
   background: linear-gradient(to bottom,#ffffff,#a0fff2, #06879e, #0162a3);
   border-left: none;
@@ -124,3 +95,61 @@ border: 1px solid rgba(0, 151, 189, 0.54);
     0 0 30px rgba(123, 0, 255, 0.2);
 }
 
+@media (max-width:320px) {
+  div{
+    display: none;
+  }
+}
+@media (min-width: 320px) and (max-width:450px) {
+  div{
+    display: none;
+  }
+}
+@media (min-width: 450px) and (max-width: 770px) {
+  div {
+    background: #000;
+  }
+}
+@media (min-width:770px) and (max-width: 1024px) {
+  div{
+    display: flexbox;
+  }
+}
+@media (min-width:1024px) and (max-width: 1440px) {
+  div{
+    display: flexbox;
+  }
+}
+@media (min-width:1441px) {
+  div{
+    display: none;
+  }
+}
+@keyframes b{
+  100% {background-position: 50% 0, 60% 50%}
+}
+
+/* Define the infinite rotation animation */
+@keyframes infinite-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes liquidWave {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+@keyframes rewind-signal {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+  
+}

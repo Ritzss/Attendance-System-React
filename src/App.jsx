@@ -5,6 +5,7 @@ import ClickSpark from "./components/UI/ClickSpark";
 import { Outlet, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 const App = () => {
+//! HAVE TO MAKE IT RESPONSIVE
 
   let {pathname} = useLocation();
 
@@ -12,7 +13,7 @@ const App = () => {
 
   return (
     
-    <section className="" >
+    <section className="MainAppBlock" >
       <Toaster />
       <ClickSpark
         sparkColor="#fff"

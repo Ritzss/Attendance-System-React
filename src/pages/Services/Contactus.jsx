@@ -8,7 +8,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import LogoLoop from "../../components/UI/LogoLoop";
 import ADSLogo from "../../Assets/Images/navlogo.png";
 import VastraLogo from "../../Assets/Images/vastradrobe.png";
-
+//! HAVE TO MAKE IT RESPONSIVE
 const Contactus = () => {
   const { currentUser } = useContext(ContextApi);
 
@@ -62,7 +62,7 @@ const Contactus = () => {
   ];
 
   return (
-    <section className=" p-7 rounded-t-xl combine-metal flex flex-col justify-evenly items-center">
+    <section className=" ContactBlock p-7 rounded-t-xl combine-metal flex flex-col justify-evenly items-center">
       <header className="h-[60vh]  w-[60%]">
         <AuthLogo className="w-full gap-15 flex-col flex justify-evenly items-center" />
       </header>

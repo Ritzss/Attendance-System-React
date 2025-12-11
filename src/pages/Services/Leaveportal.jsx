@@ -1,8 +1,9 @@
 import React from 'react'
+//! HAVE TO MAKE IT RESPONSIVE
 
 const Leaveportal = () => {
   return (
-    <div>Leaveportal</div>
+    <div className='LeaveBlock'>Leaveportal</div>
   )
 }
 

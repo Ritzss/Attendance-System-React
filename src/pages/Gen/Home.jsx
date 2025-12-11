@@ -5,6 +5,7 @@ import WelcomeCard from "../../components/home/WelcomeCard";
 import MiniCard from "../../components/home/MiniCard";
 import AttendanceChart from "../../components/home/AttendanceChart";
 import AttendancePie from "../../components/home/AttendancePie";
+//! HAVE TO MAKE IT RESPONSIVE
 
 const Home = () => {
   const { currentUser, marked } = useContext(ContextApi);
@@ -14,7 +15,7 @@ const Home = () => {
   
 
   return (
-    <section id="home" className="flex flex-col">
+    <section id="home" className=" HomeBlock flex flex-col">
       {/* MAIN WELCOME + ATTENDANCE */}
       <article className="rounded-4xl m-5 flex justify-center items-center">
         <WelcomeCard data={{ ...currentUser, marked }} />

@@ -10,6 +10,7 @@ import AuthLogo from "../../components/Auth/AuthLogo";
 import Authbuttons from "../../components/Auth/Authbuttons";
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
+//! HAVE TO MAKE IT RESPONSIVE
 
 const Login = () => {
   const {
@@ -83,7 +84,7 @@ const Login = () => {
 
         <section
           id="login-box"
-          className="bg-[#00000041] mx-[10%] my-[5%] rounded-2xl customshadow p-3 flex justify-center items-center"
+          className="LoginBlock bg-[#00000041] mx-[10%] my-[5%] rounded-2xl customshadow p-3 flex justify-center items-center"
         >
           <AuthLogo />
 

@@ -1,8 +1,9 @@
 import React from 'react'
 
 const Break = () => {
+  //! HAVE TO MAKE IT RESPONSIVE
   return (
-    <div>Break</div>
+    <div className='BreakBlock'>Break</div>
   )
 }
 

@@ -18,6 +18,7 @@ import { GiOfficeChair } from "react-icons/gi";
 import { FaAddressCard, FaUserTie } from "react-icons/fa";
 import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import bcrypt from "bcryptjs";
+//! HAVE TO MAKE IT RESPONSIVE
 
 const Register = () => {
   let {
@@ -141,7 +142,7 @@ const Register = () => {
       duration={200}
     >
       <Toaster />
-      <section key={10} className="flex flex-col justify-center items-center">
+      <section key={10} className="RegisterBlock flex flex-col justify-center items-center">
         <Navbar />
         <section
           key={9}

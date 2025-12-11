@@ -1,12 +1,14 @@
 import React from "react";
 import CoinFlipAvatar from "../UI/CoinFlipAvatar";
 
+//! HAVE TO MAKE IT RESPONSIVE
+
 const WelcomeCard = ({ data }) => {
   console.log(data);
   console.log(data.marked);
 
   return (
-    <div className="flex p-7 justify-between   rounded-4xl w-full h-[65vh]">
+    <div className="Welcome Block flex p-7 justify-between   rounded-4xl w-full h-[65vh]">
       {/* Left */}
       <div className="w-[48%] p-5 h-full rounded-4xl">
         <div className="rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">

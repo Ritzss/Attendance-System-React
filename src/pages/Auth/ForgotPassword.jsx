@@ -9,6 +9,7 @@ import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { ContextApi } from "../../context/ContextProvider";
+//! HAVE TO MAKE IT RESPONSIVE
 
 const ForgotPassword = () => {
   const initialOtp = { box1: "", box2: "", box3: "", box4: "" };
@@ -120,7 +121,7 @@ const ForgotPassword = () => {
       sparkCount={10}
       duration={200}
     >
-      <section className="flex flex-col justify-center items-center">
+      <section className="ForgotBlock flex flex-col justify-center items-center">
         <Navbar />
         <Toaster />
 

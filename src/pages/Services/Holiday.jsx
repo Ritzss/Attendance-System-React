@@ -1,8 +1,10 @@
 import React from 'react'
 
+//! HAVE TO MAKE IT RESPONSIVE
+
 const Holiday = () => {
   return (
-    <div>Holiday</div>
+    <div className='HolidayBlock'>Holiday</div>
   )
 }
 
