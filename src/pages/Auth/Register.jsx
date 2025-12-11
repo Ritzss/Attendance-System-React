@@ -147,13 +147,13 @@ const Register = () => {
         <section
           key={9}
           id="registration-box"
-          className=" bg-[#00000041] w-[95%] rounded-2xl customshadow my-5 flex justify-center items-center"
+          className=" bg-[#00000041] w-[99%] rounded-2xl customshadow my-5 flex justify-center items-center"
         >
           <section
             key={11}
             className="blue-metal h-[80vh] p-5 flex  justify-evenly my-5 rounded-2xl customshadow w-[98%]"
           >
-            <section id="rightsideRegister" className="w-[200%] flex  ">
+            <section id="rightsideRegister" className="w-[190%] flex  ">
               <AuthLogo
                 className={" flex flex-col justify-evenly items-center w-[%]"}
               />
@@ -175,7 +175,7 @@ const Register = () => {
               >
                 <div className="flex flex-wrap justify-center">
                   <div key={"name_attribute"} className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <MdOutlineDriveFileRenameOutline />
                     </div>
                     <MinicardLogin
@@ -189,7 +189,7 @@ const Register = () => {
                     />
                   </div>
                   <div key={"Confirmname_attribute"} className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <MdOutlineDriveFileRenameOutline />
                     </div>
                     <MinicardLogin
@@ -203,7 +203,7 @@ const Register = () => {
                     />
                   </div>
                   <div className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <MdOutlineMail />
                     </div>
                     <MinicardLogin
@@ -218,7 +218,7 @@ const Register = () => {
                     />
                   </div>
                   <div className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <IoMdContact />
                     </div>
                     <MinicardLogin
@@ -233,7 +233,7 @@ const Register = () => {
                     />
                   </div>
                   <div className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <GiOfficeChair />
                     </div>
                     <MinicardLogin
@@ -247,7 +247,7 @@ const Register = () => {
                     />
                   </div>
                   <div className="relative">
-                    <div className="absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       {" "}
                       <FaUserTie />
                     </div>
@@ -278,7 +278,7 @@ const Register = () => {
                     />
                   </div>
                   <div name="AddressDiv" className="relative">
-                    <div className="absolute top-[5.9vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[4vh] w-[3vw]">
+                    <div className="regis-icons2 absolute top-[5.9vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[4vh] w-[3vw]">
                       <FaAddressCard />
                     </div>
                     <MinicardLogin
@@ -294,7 +294,7 @@ const Register = () => {
                     />
                   </div>
                   <div className="relative">
-                    <div className="absolute top-[5.87vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons1 absolute top-[5.87vh] text-xl left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <MdOutlinePassword />
                     </div>
 
@@ -311,7 +311,7 @@ const Register = () => {
                       autocomplete={"new-password"}
                     />
                     <div
-                      className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
+                      className="regis-icons1 absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
                       onClick={() => {
                         setVisible(!visible);
                       }}
@@ -320,7 +320,7 @@ const Register = () => {
                     </div>
                   </div>
                   <div className="relative">
-                    <div className="absolute text-xl top-[5.87vh] left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
+                    <div className="regis-icons1 absolute text-xl top-[5.87vh] left-[1.5vw] flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
                       <MdOutlinePassword />
                     </div>
                     <MinicardLogin
@@ -336,7 +336,7 @@ const Register = () => {
                       autocomplete={"new-password"}
                     />
                     <div
-                      className="absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
+                      className="regis-icons1 absolute top-[5.87vh] text-xl right-[0.7vw] flex justify-center items-center rounded-r-md bg-[#9eff80] h-[3.8vh] w-[2.6vw]"
                       onClick={() => {
                         setVisible2(!visible2);
                       }}

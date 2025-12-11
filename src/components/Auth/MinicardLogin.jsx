@@ -38,7 +38,7 @@ const MinicardLogin = ({
           </header>
           <main className="flex justify-center ">
             {type === "radio" ? (
-              <div className="flex gap-6 w-full justify-center">
+              <div id="radiodiv" className="flex gap-6 w-full justify-center">
                 {radioOptions.length > 0 &&
                   radioOptions.map((options) => {
                     return (
@@ -71,6 +71,7 @@ const MinicardLogin = ({
               </div>
             ) : (
               <div
+              id="inputdiv"
                 style={{
                   width: divwidth || "",
                   height: height || "",

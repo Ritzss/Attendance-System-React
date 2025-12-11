@@ -103,7 +103,7 @@ const Login = () => {
             <main id="inputs" className="flex flex-col justify-center h-[55%]">
               {/* Email */}
               <header className="relative">
-                <div className="absolute bottom-[1.4vh] flex justify-center items-center w-[2.9vw] text-[26px] h-[4vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
+                <div className="absolute bottom-[1.8vh] icons flex justify-center items-center w-[2.9vw] text-[26px] h-[4.1vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
                   <MdOutlineMail />
                 </div>
 
@@ -113,14 +113,14 @@ const Login = () => {
                   name="Email"
                   value={loginForm.Email}
                   onChange={handleChange}
-                  paddingL="40px"
+                  paddingL="10%"
                   width={"100%"}
                 />
               </header>
 
               {/* Password */}
               <main id="password" className="relative">
-                <div className="absolute bottom-[1.4vh] flex justify-center items-center w-[2.9vw] text-[26px] h-[4vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
+                <div className="absolute bottom-[1.8vh] icons flex justify-center items-center w-[2.9vw] text-[26px] h-[4.1vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
                   <MdOutlinePassword />
                 </div>
 
@@ -135,7 +135,7 @@ const Login = () => {
 
                 {/* Password Visibility Toggle */}
                 <div
-                  className="absolute bottom-[1.4vh] h-[4vh] flex justify-center items-center text-xl bg-[#9eff80] w-7.5 rounded-r-md right-[2.4vw]"
+                  className="absolute bottom-[1.8vh] icons1 h-[4.1vh] flex justify-center items-center text-xl bg-[#9eff80] w-7.5 rounded-r-md right-[2.4vw]"
                   onClick={() => setVisible(!visible)}
                 >
                   {visible ? <RiEyeFill /> : <RiEyeCloseFill />}
@@ -167,13 +167,13 @@ const Login = () => {
               <Authbuttons handleLogin={handleLogin} />
 
               {/* Bottom links */}
-              <footer className="flex flex-col h-[5%]">
+              <footer className="FooterBlock flex flex-col h-[5%]">
                 <div className="flex justify-between">
                   {/* Register */}
                   <div className="flex self-end text-white">
                     Didn't join our family yet?
                     <NavLink to={"register"}>
-                      <p className="pl-1 text-red-600 hover:text-[#ff9100] transition-transform duration-300 hover:scale-110">
+                      <p className=" text-red-600 hover:text-[#ff9100] transition-transform duration-300 hover:scale-110">
                         Register...
                       </p>
                     </NavLink>

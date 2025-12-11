@@ -96,28 +96,173 @@ border: 1px solid rgba(0, 151, 189, 0.54);
 }
 
 @media (max-width:320px) {
-  div{
+  .LoginBlock{
+    display: block;
+    width: 110%;
+    margin: 0;
+  }
+  .NavBLock{
+    margin: 6%;
+    margin-left: 16%;
+  }
+  #rightsideLogin{
     display: none;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 0.1%;
+    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
+  }
+  #leftsideLogin{
+    border-radius:2%;
+    width: 100%;
+    justify-content:center;
+    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  .icons{
+    width: 8vw;
+    height: 4.2vh;
+    bottom: 14% ;
+    left: 10vw;
+  }
+  .icons1{
+    width: 8vw;
+    height: 4.2vh;
+    bottom: 14% ;
+    right:3.5vw;
+  }
+  #inputdiv{
+    width: 100%;
+  }
+  #radiodiv{
+    display: block ;
+    width:70%;
+  }
+  .FooterBlock{
+    font-size: 70%;
   }
 }
-@media (min-width: 320px) and (max-width:450px) {
-  div{
-    display: none;
+@media (min-width: 321px) and (max-width:425px) {
+  .LoginBlock{
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .NavBLock{
+    margin: 5%;
+    margin-left: 11%;
+  }
+  #rightsideLogin{
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 3% 3% 0% 0%;
+    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
+  }
+  #leftsideLogin{
+    border-radius:0% 0% 3% 3%;
+    width: 100%;
+    justify-content: space-around;
+    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  .icons{
+    width: 6vw;
+    height: 4.2vh;
+    bottom: 15% ;
+    left: 12vw;
+  }
+  .icons1{
+    width: 6vw;
+    height: 4.2vh;
+    bottom: 15% ;
+    right:6.5vw;
+  }
+  #radiodiv{
+    display: block ;
+    width:70%;
+  }
+  .FooterBlock{
+    font-size: 82%;
   }
 }
-@media (min-width: 450px) and (max-width: 770px) {
-  div {
-    background: #000;
+@media (min-width: 451px) and (max-width: 770px) {
+  .NavBLock{
+    margin: 5%;
+    margin-left: 11%;
+  }
+  .LoginBlock{
+    display: block;
+  }
+  #rightsideLogin{
+    width: 100%;
+    justify-content: space-evenly;
+    border-radius: 0.1%;
+    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
+  }
+  #leftsideLogin{
+    border-radius:0.1%;
+    width: 100%;
+    justify-content: space-evenly;
+    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  .icons{
+    width: 6vw;
+    height: 4.2vh;
+    bottom: 15% ;
+    left: 7vw;
+  }
+  .icons1{
+    width: 6vw;
+    height: 4.2vh;
+    bottom: 15% ;
+    right:4.5vw;
   }
 }
-@media (min-width:770px) and (max-width: 1024px) {
-  div{
-    display: flexbox;
+@media (min-width:771px) and (max-width: 1024px) {
+  .NavBLock{
+    margin: 5%;
+    margin-left: 11%;
+  }
+  
+  .icons{
+    height: 4.2vh;
+    bottom: 14%;
+  }
+  .icons1{
+    height: 4.2vh;
+    bottom: 14%;
+  }
+  .FooterBlock{
+    font-size: 90%;
   }
 }
-@media (min-width:1024px) and (max-width: 1440px) {
-  div{
-    display: flexbox;
+@media (min-width:1025px) and (max-width: 1440px) {
+  .NavBLock{
+    margin: 5%;
+    margin-left: 11%;
+  }
+  .icons{
+    height: 4vh;
+    bottom: 15%;
+  }
+  .icons1{
+    height: 4vh;
+    bottom: 15%;
+    width: 3vw;
+    right: 3%;
+  }
+  .regis-icons{
+    width: 10%;
+    height: 4.2vh;
+    top: 52%;
+  }
+  .regis-icons1{
+    width: 10%;
+    height: 4.2vh;
+    top:52%;
+  }
+  .regis-icons2{
+    width: 10%;
+    height: 4.2vh;
+    top:52%;
   }
 }
 @media (min-width:1441px) {
