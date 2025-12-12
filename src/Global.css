@@ -102,8 +102,10 @@ border: 1px solid rgba(0, 151, 189, 0.54);
     margin: 0;
   }
   .NavBLock{
-    margin: 6%;
-    margin-left: 16%;
+    flex-wrap: nowrap;
+    font-size: 10px;
+    width: 100%;
+    gap: 0px;
   }
   #rightsideLogin{
     display: none;
@@ -140,6 +142,125 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   .FooterBlock{
     font-size: 70%;
   }
+  .registerBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  #rightsideRegister{
+    display: none;
+  }
+  .rightsideRegister{
+    background: transparent;
+  }
+  .regis-icons{
+    width: 10%;
+    height: 4.2vh;
+    top: 52%;
+  }
+  .regis-icons1{
+    width: 10%;
+    height: 4.2vh;
+    top:53%;
+  }
+  .regis-icons2{
+    width: 10%;
+    height: 4vh;
+    top:53%;
+  }
+  .ForgotBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+   #right{
+    display: none;
+  }
+  #left{
+    width: 100%;
+  }
+   .otp-box{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 30vh;
+  }
+  .fpassIcons{
+    height: 4.2vh;
+    width: 15vw;
+    bottom: 6%;
+    left: 9%;
+  }
+  .otp-button{
+    width: 50%;
+  }
+  .LogoBlock{
+    display: none;
+  }
+  #home>article{
+    margin: 0;
+    margin-top: 2vh;
+  }
+  .WelcomeBlock{
+    display: block;
+    padding: 0% 1%;
+  }
+  #LeftWelcome{
+    width: 100%;
+  }
+  #RightWelcome{
+    gap: 1vw;
+    width: 98%;
+    height: 30%;
+    margin: 0% 2%;
+  }
+  .SecondBlock{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 4%;
+    gap: 1vw;
+  }
+  #chart{
+    width: 100%;
+    margin-bottom: 1vh;
+  }
+  #pie{
+    width: 100%;
+  }
+  .LeftGrid{
+    width: 100%;
+  }
+  .RightGrid{
+    width: 100%;
+  }
+  .ThirdBlock{
+    flex-direction: column;
+    gap:0;
+  }
+  .TextBlock{
+    margin: 0;
+  }
+  .ImgBlock1{
+    width: 25vh;
+    height: 25vh;
+  }
+  .ContactBlock>header{
+    margin-bottom: 40vh;
+  }
+  .ContactBlock>footer{
+    display: block;
+  }
+  .ContactBlock{
+    height: auto;
+  }
+  .FormBlock{
+    width: 100%;
+  }
+  #rightcontact{
+    width: 100%;
+  }
+  #SubmitButton{
+    position: relative;
+  }
 }
 @media (min-width: 321px) and (max-width:425px) {
   .LoginBlock{
@@ -147,9 +268,14 @@ border: 1px solid rgba(0, 151, 189, 0.54);
     width: 100%;
     margin: 0;
   }
+  .LogoBlock{
+    display: none;
+  }
   .NavBLock{
-    margin: 5%;
-    margin-left: 11%;
+    flex-wrap: nowrap;
+    font-size: 12px;
+    width: 100%;
+    gap: 10px;
   }
   #rightsideLogin{
     width: 100%;
@@ -182,11 +308,121 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   .FooterBlock{
     font-size: 82%;
   }
+  .registerBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  #rightsideRegister{
+    width: 100%;
+  }
+  .rightsideRegister{
+    background: transparent;
+  }
+  .regis-icons{
+    width: 10%;
+    height: 4.2vh;
+    top: 52%;
+  }
+  .regis-icons1{
+    width: 10%;
+    height: 4.2vh;
+    top:53%;
+  }
+  .regis-icons2{
+    width: 10%;
+    height: 4vh;
+    top:53%;
+  }
+  .ForgotBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+   #right{
+    width: 100%;
+    height: 70vh;
+  }
+  #left{
+    width: 100%;
+  }
+   .otp-box{
+    width: 100%;
+  }
+  .fpassIcons{
+    height: 4.2vh;
+    width: 6vw;
+    bottom: 6%;
+    left: 9%;
+  }
+  .otp-button{
+    width: 50%;
+  }
+  .WelcomeBlock{
+    display: block;
+    padding: 0% 1%;
+  }
+  #LeftWelcome{
+    width: 100%;
+  }
+  #RightWelcome{
+    gap: 1vw;
+    width: 98%;
+    height: 30%;
+    margin: 0% 2%;
+  }
+  .SecondBlock{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 4%;
+    gap: 1vw;
+  }
+  #chart{
+    width: 100%;
+    margin-bottom: 1vh;
+  }
+  #pie{
+    width: 100%;
+  }
+  .LeftGrid{
+    width: 100%;
+  }
+  .RightGrid{
+    width: 100%;
+  }
+  .ThirdBlock{
+    flex-direction: column;
+    gap:0;
+  }
+  .TextBlock{
+    margin: 0;
+  }
+  .ImgBlock1{
+    width: 25vh;
+    height: 25vh;
+  }
+  .ContactBlock>header{
+    margin-bottom: 30vh;
+  }
+  .ContactBlock>footer{
+    display: block;
+  }
+  .ContactBlock{
+    height: auto;
+  }
+  .FormBlock{
+    width: 100%;
+  }
+  #rightcontact{
+    width: 100%;
+  }
+  #SubmitButton{
+    position: relative;
+  }
 }
 @media (min-width: 451px) and (max-width: 770px) {
   .NavBLock{
     margin: 5%;
-    margin-left: 11%;
+    gap:18px;
   }
   .LoginBlock{
     display: block;
@@ -215,11 +451,83 @@ border: 1px solid rgba(0, 151, 189, 0.54);
     bottom: 15% ;
     right:4.5vw;
   }
+  .registerBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+  }
+  #rightsideRegister{
+    width: 100%;
+  }
+  .rightsideRegister{
+    background: transparent;
+  }
+  .regis-icons{
+    width: 10%;
+    height: 4.2vh;
+    top: 53%;
+  }
+  .regis-icons1{
+    width: 10%;
+    height: 4.2vh;
+    top:52%;
+  }
+  .regis-icons2{
+    width: 10%;
+    height: 4vh;
+    top:53%;
+  }
+  .ForgotBlock{
+    display: block;
+    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    padding: 5vh;
+  }
+  #right{
+    width: 100%;
+  }
+  #left{
+    width: 100%;
+  }
+  .otp-box{
+    width: 60%;
+  }
+  .fpassIcons{
+    height: 4.2vh;
+    width: 6vw;
+    bottom: 6%;
+    left: 9%;
+  }
+  .WelcomeBlock{
+    display: block;
+    padding: 0% 1%;
+  }
+  #LeftWelcome{
+    width: 100%;
+  }
+  #RightWelcome{
+    gap: 1vw;
+    width: 98%;
+    height: 30%;
+    margin: 0% 2%;
+  }
+  .SecondBlock{
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 4%;
+    gap: 1vw;
+  }
+  #chart{
+    width: 100%;
+    margin-bottom: 1vh;
+  }
+  #pie{
+    width: 50%;
+  }
 }
 @media (min-width:771px) and (max-width: 1024px) {
   .NavBLock{
     margin: 5%;
-    margin-left: 11%;
+    gap: 90px;
   }
   
   .icons{
@@ -233,22 +541,6 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   .FooterBlock{
     font-size: 90%;
   }
-}
-@media (min-width:1025px) and (max-width: 1440px) {
-  .NavBLock{
-    margin: 5%;
-    margin-left: 11%;
-  }
-  .icons{
-    height: 4vh;
-    bottom: 15%;
-  }
-  .icons1{
-    height: 4vh;
-    bottom: 15%;
-    width: 3vw;
-    right: 3%;
-  }
   .regis-icons{
     width: 10%;
     height: 4.2vh;
@@ -257,12 +549,81 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   .regis-icons1{
     width: 10%;
     height: 4.2vh;
+    top:53%;
+  }
+  .regis-icons2{
+    width: 10%;
+    height: 4vh;
+    top:53%;
+  }
+  #right{
+    width: 140%;
+  }
+  .otp-box{
+    width: 70%;
+  }
+  .fpassIcons{
+    height: 4.2vh;
+    width: 4vw;
+    bottom: 5%;
+    left: 10%;
+  }
+  .WelcomeBlock{
+    display: block;
+  }
+  #LeftWelcome{
+    width: 100%;
+  }
+  #RightWelcome{
+    flex-direction: row;
+    gap: 2vw;
+    width: 100%;
+  }
+  .SecondBlock{
+    width: 92%;
+    margin: 0% 4%;
+    gap: 2vw;
+  }
+
+}
+@media (min-width:1025px) and (max-width: 1440px) {
+  .NavBLock{
+    margin: 5%;
+  }
+  .icons{
+    height: 4.2vh;
+    bottom: 15%;
+    left: 10%;
+  }
+  .icons1{
+    height: 4.2vh;
+    bottom: 15%;
+    width: 3vw;
+    right: 3%;
+  }
+  .regis-icons{
+    width: 10%;
+    height: 4.2vh;
+    top: 53%;
+  }
+  .regis-icons1{
+    width: 10%;
+    height: 4.2vh;
     top:52%;
   }
   .regis-icons2{
     width: 10%;
-    height: 4.2vh;
-    top:52%;
+    height: 4vh;
+    top:53%;
+  }
+  .fpassIcons{
+    height: 4.3vh;
+    width: 4vw;
+    bottom: 6%;
+    left: 7%;
+  }
+  .otp-box{
+    width: 70%;
   }
 }
 @media (min-width:1441px) {

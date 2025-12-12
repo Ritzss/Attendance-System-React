@@ -1,10 +1,10 @@
 import React from 'react'
 import Logimg from "../../Assets/Images/navlogo.png";
 
-const AuthLogo = ({className}) => {
+const AuthLogo = ({id,className}) => {
   return (
     <section
-      id="rightsideLogin"
+      id={ id || "rightsideLogin"}
       className={className ? className : "blue-metal flex flex-col justify-center items-center rounded-2xl border-l-0 rounded-r-none gap-4  w-[75vh] p-5 h-[75vh]"
        }
     >

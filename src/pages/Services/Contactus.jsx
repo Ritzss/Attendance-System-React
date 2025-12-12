@@ -63,8 +63,8 @@ const Contactus = () => {
 
   return (
     <section className=" ContactBlock p-7 rounded-t-xl combine-metal flex flex-col justify-evenly items-center">
-      <header className="h-[60vh]  w-[60%]">
-        <AuthLogo className="w-full gap-15 flex-col flex justify-evenly items-center" />
+      <header className="h-[80vh] w-[60%]">
+        <AuthLogo id="Contactblock" className="w-full gap-15 flex-col flex justify-evenly items-center" />
       </header>
 
       <main className="mb-8">
@@ -88,11 +88,11 @@ const Contactus = () => {
         </div>
       </main>
 
-      <footer className="w-[99vw] h-[66vh] bg-black relative  text-white flex justify-between items-center">
+      <footer className="w-[99vw]  bg-black relative  text-white flex justify-between items-center">
         {/* LEFT SIDE FORM */}
         <div className="mx-4 p-4 border border-orange-600 customshadow bg-[#505050] px-3 rounded-2xl">
           <div className="text-4xl font-bold">Connect With Us :</div>
-          <form className="w-[40vw] flex flex-col">
+          <form className="FormBlock w-[40vw] flex flex-col">
             <div className="">
               <MinicardLogin
                 label="Email :"
@@ -137,6 +137,7 @@ const Contactus = () => {
         {/* Submit Button */}
         <button
           type="submit"
+          id="SubmitButton"
           onClick={sendInquiry}
           className="absolute left-[33vw] -bottom-4 p-3 self-end w-[40%] bg-blue-600 rounded-2xl  hover:bg-blue-700 transition"
         >
@@ -144,12 +145,12 @@ const Contactus = () => {
         </button>
 
         {/* RIGHT SIDE */}
-        <div className="w-[40vw] flex-col flex gap-15 h-full py-[5vh]">
+        <div id="rightcontact" className="w-[40vw] flex-col flex gap-15 h-full py-[5vh]">
           <div className="text-4xl font-bold text-white">
             Social Media Links:
           </div>
 
-          <div className="text-3xl pl-15 gap-5 flex flex-col">
+          <div className="text-3xl gap-5 flex flex-col">
             {/* Instagram (Gradient Text) */}
             <a
               href="https://instagram.com"

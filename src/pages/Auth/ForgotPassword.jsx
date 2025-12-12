@@ -121,27 +121,27 @@ const ForgotPassword = () => {
       sparkCount={10}
       duration={200}
     >
-      <section className="ForgotBlock flex flex-col justify-center items-center">
+      <section className=" flex flex-col">
         <Navbar />
         <Toaster />
 
-        <section className="bg-[#00000041] mx-[10%] my-[5%] rounded-2xl customshadow p-3 flex justify-center items-center">
-          <section className="blue-metal h-[90vh] p-5 flex justify-evenly my-5 rounded-2xl customshadow w-[98%]">
-            <section id="right" className="flex">
-              <AuthLogo className="flex flex-col justify-evenly items-center" />
+        <section className=" bg-[#00000041]  rounded-2xl customshadow p-3 flex justify-center items-center ">
+          <section className="ForgotBlock blue-metal pt-5 flex gap-7 justify-evenly my-5 rounded-2xl customshadow w-[98%]">
+            <section id="right" className="flex ">
+              <AuthLogo id={"forgotBlock"} className=" h-[70vh] flex flex-col justify-between items-center" />
             </section>
 
-            <section id="left" className="w-[200%]">
-              <header className="flex justify-center">
-                <div className="text-3xl text-center customshadow rounded-3xl mb-[20vh] w-[50%]">
+            <section id="left" className="w-[200%] flex flex-col justify-center gap-2">
+              <header className="flex justify-center items-center">
+                <div className="text-3xl text-center customshadow rounded-xl mb-[2vh] p-3">
                   Forgot Password
                 </div>
               </header>
 
-              <main className="p-4 rounded-2xl">
+              <main className=" rounded-2xl">
                 {/* Email Input */}
                 <div className="relative">
-                  <div className="absolute bottom-[0.5vh] flex justify-center items-center w-[2.9vw] text-[26px] h-[3.8vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
+                  <div className="fpassIcons absolute bottom-[0.5vh] flex justify-center items-center w-[2.9vw] text-[26px] h-[3.8vh] bg-[#9eff80] rounded-l-md left-[3.9vw]">
                     <MdOutlineMail />
                   </div>
 
@@ -157,20 +157,20 @@ const ForgotPassword = () => {
                 </div>
 
                 {/* Send OTP Button */}
-                <div className="customshadow w-[30%] text-center rounded-full bg-white m-4 text-2xl hover:bg-[#00ff00] transition-colors duration-300">
+                <div className="otp-button customshadow w-[30%] text-center rounded-full bg-white m-4 text-2xl hover:bg-[#00ff00] transition-colors duration-300">
                   <button onClick={handleSendOtp}>Send OTP</button>
                 </div>
 
                 {/* OTP Box */}
                 {showOtp && (
-                  <div className="customshadow rounded-2xl p-[0.1vh]">
-                    <div className="text-2xl mt-9 ml-9">OTP :</div>
+                  <div className="otp-box bg-[#00000080] rounded-xl">
+                    <div className="text-2xl text-white mt-5 ml-9">OTP :</div>
 
-                    <div className="flex justify-center gap-2 m-6">
+                    <div className="flex justify-center gap-2 m-4">
                       {["box1", "box2", "box3", "box4"].map((box) => (
                         <div
                           key={box}
-                          className="flex justify-center items-center w-[18%] bg-white shadow-[inset_0_0_10px_1px_rgb(0,0,0)] rounded-xl border h-[11vh]"
+                          className="flex justify-center w-[18%] bg-white shadow-[inset_0_0_10px_1px_rgb(0,0,0)] rounded-xl border"
                         >
                           <input
                             type="text"
@@ -179,7 +179,7 @@ const ForgotPassword = () => {
                             onChange={handleOtpChange}
                             onKeyDown={handleKeyDown}
                             maxLength={1}
-                            className="w-[5vw] h-[10vh] rounded-xl text-center text-4xl font-semibold"
+                            className="w-[5vw] h-[10vh] rounded-xl text-center text-3xl font-semibold"
                           />
                         </div>
                       ))}

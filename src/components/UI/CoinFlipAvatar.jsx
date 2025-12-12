@@ -24,7 +24,7 @@ export default function CoinFlipAvatar() {
   }, []);
 
   return (
-    <div className=" flex justify-center items-center w-[40vh] h-[35vh] rounded-full mx-auto">
+    <div className="ImgBlock1 flex justify-center items-center w-[40vh] h-[35vh] rounded-full ">
       <img
         src={images[index]}
         className={`

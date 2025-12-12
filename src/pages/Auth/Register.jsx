@@ -151,11 +151,12 @@ const Register = () => {
         >
           <section
             key={11}
-            className="blue-metal h-[80vh] p-5 flex  justify-evenly my-5 rounded-2xl customshadow w-[98%]"
+            className="registerBlock blue-metal h-[90%] p-5 flex justify-between my-5 rounded-2xl customshadow w-[98%]"
           >
-            <section id="rightsideRegister" className="w-[190%] flex  ">
+            <section id="rightsideRegister" className="w-[140%] flex  ">
               <AuthLogo
-                className={" flex flex-col justify-evenly items-center w-[%]"}
+              id={"rightsideRegister"}
+                className={"bg-transparent flex flex-col justify-center gap-10 items-center "}
               />
             </section>
             <div className="h-full flex justify-between flex-col">
@@ -163,7 +164,7 @@ const Register = () => {
                 id="heading"
                 className=" flex justify-center items-center"
               >
-                <div className="text-4xl text-[#3b3b3bcb] p-3 pt-1  bg-[#ffffff99] shadow-[inset_0_0_20px_5px_rgba(1,129,189)] w-[45%] text-center rounded-3xl">
+                <div className="text-4xl text-[#3b3b3bcb] p-3 pt-1  bg-[#ffffff99] shadow-[inset_0_0_20px_5px_rgba(1,129,189)] text-center rounded-3xl">
                   <p>Register</p>
                 </div>
               </header>
@@ -355,7 +356,7 @@ const Register = () => {
                       Register
                     </button>
                   </header>
-                  <footer className="p-1 self-start">
+                  <footer className="p-1 self-end">
                     <div className="text-white">
                       <div className="flex">
                         Already member of our family?{" "}

@@ -10,7 +10,39 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const AttendancePie = () => {
 
-  const data = [];
+  const data = [
+  { date: "2024-12-01", attendance: 8 },
+  { date: "2024-12-02", attendance: 10 },
+  { date: "2024-12-03", attendance: 7 },
+  { date: "2024-12-04", attendance: 9 },
+  { date: "2024-12-05", attendance: 6 },
+  { date: "2024-12-06", attendance: 10 },
+  { date: "2024-12-07", attendance: 0 },   // Sunday / holiday
+  { date: "2024-12-08", attendance: 0 },   // Sunday / holiday
+  { date: "2024-12-09", attendance: 9 },
+  { date: "2024-12-10", attendance: 8 },
+  { date: "2024-12-11", attendance: 10 },
+  { date: "2024-12-12", attendance: 7 },
+  { date: "2024-12-13", attendance: 6 },
+  { date: "2024-12-14", attendance: 8 },
+  { date: "2024-12-15", attendance: 0 },
+  { date: "2024-12-16", attendance: 10 },
+  { date: "2024-12-17", attendance: 9 },
+  { date: "2024-12-18", attendance: 7 },
+  { date: "2024-12-19", attendance: 6 },
+  { date: "2024-12-20", attendance: 8 },
+  { date: "2024-12-21", attendance: 7 },
+  { date: "2024-12-22", attendance: 0 },
+  { date: "2024-12-23", attendance: 10 },
+  { date: "2024-12-24", attendance: 9 },
+  { date: "2024-12-25", attendance: 0 },   // Christmas off
+  { date: "2024-12-26", attendance: 8 },
+  { date: "2024-12-27", attendance: 7 },
+  { date: "2024-12-28", attendance: 6 },
+  { date: "2024-12-29", attendance: 0 },
+  { date: "2024-12-30", attendance: 9 },
+  { date: "2024-12-31", attendance: 10 }
+];
 
   let present = 0, absent = 0, holidays = 0;
 
@@ -49,10 +81,10 @@ const AttendancePie = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "left",
+        position: "right",
         labels: {
           color: "#ffffff",
-          font: { size: 12 },
+          font: { size: 8 },
         },
       },
     },

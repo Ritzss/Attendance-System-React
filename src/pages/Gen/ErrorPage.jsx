@@ -60,19 +60,19 @@ const Error = () => {
     <div className="ErrorBlock flex flex-col gap-6 justify-center items-center mt-[10vh]">
       <div className="self-center flex justify-center items-center staticbg shadow-[inset_0_0_50px_rgba(0,0,0)] rounded-4xl h-[70vh] w-[70vw] overflow-hidden">
 
-        <div className="h-full w-full flex flex-col justify-center items-center">
+        <div className="h-full w-full  flex flex-col justify-center items-center">
 
           <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
             Error Code: {code}
           </FuzzyText>
 
-          <div className="mt-6">
+          <div className="mt-7">
             <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
               {title}
             </FuzzyText>
           </div>
 
-          <div className="mt-10 px-10 text-center">
+          <div className="mt-10 text-center">
             <FuzzyText baseIntensity={0.2} hoverIntensity={0.5} enableHover={true}>
               {message}
             </FuzzyText>

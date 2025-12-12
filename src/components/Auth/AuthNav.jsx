@@ -10,7 +10,7 @@ const AuthNav = () => {
   return (
     <div>
       {loggin ? (
-        <span className="flex gap-2">
+        <span className="flex gap-5">
           <span>{currentUser?.Name}</span>
           <span>
             <button
@@ -25,7 +25,7 @@ const AuthNav = () => {
           </span>
         </span>
       ) : (
-        <span className="flex gap-2">
+        <span className="flex gap-5">
           <span>
             <NavLink to={"/"}>Login</NavLink>
           </span>

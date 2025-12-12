@@ -8,10 +8,10 @@ const WelcomeCard = ({ data }) => {
   console.log(data.marked);
 
   return (
-    <div className="Welcome Block flex p-7 justify-between   rounded-4xl w-full h-[65vh]">
+    <div className="WelcomeBlock flex p-7 justify-between rounded-4xl w-full ">
       {/* Left */}
-      <div className="w-[48%] p-5 h-full rounded-4xl">
-        <div className="rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
+      <div id="LeftWelcome" className="p-5  rounded-4xl">
+        <div className="ImgBlock1 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
           {data?.profile_image ? (
             <img
               className="w-[40vh] h-[35vh] rounded-full"
@@ -26,7 +26,7 @@ const WelcomeCard = ({ data }) => {
           )}
         </div>
 
-        <div className="rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] -mt-[10vh] ml-[4vh] w-[45vw] h-[30vh] p-5">
+        <div className="TextBlock rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] -mt-[10vh] ml-[4vh] p-5">
           <h1 className="text-white text-3xl text-right">
             Welcome Back, {data?.Name}!
           </h1>
@@ -42,9 +42,9 @@ const WelcomeCard = ({ data }) => {
       </div>
 
       {/* Right */}
-      <div className="flex flex-col gap-18 justify-between py-10 w-[41%]">
+      <div id="RightWelcome" className="flex flex-col justify-between  w-[41%]">
         {/* Today's attendance */}
-        <div className="flex flex-col p-5 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full h-[48%]">
+        <div className="flex flex-col p-5 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
           <div className="text-white text-4xl">Today's Attendance:</div>
           <div className="flex justify-end px-9 text-white text-6xl">
             {data?.marked ? "1" : "0"}/1
@@ -52,7 +52,7 @@ const WelcomeCard = ({ data }) => {
         </div>
 
         {/* Mark Attendance */}
-        <div className="rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full h-[48%]">
+        <div className="rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
           <div className="text-white p-3 text-4xl">Mark Attendance:</div>
 
           <div

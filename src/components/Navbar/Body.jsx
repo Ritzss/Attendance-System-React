@@ -8,7 +8,7 @@ const Body = () => {
   let {authUser,loggin} = useContext(ContextApi)
 
   return (
-    <section >
+    <section id='Navbody' >
       {loggin && authUser=="employee" &&
       <div className='flex gap-7'>
         <header>
@@ -19,31 +19,31 @@ const Body = () => {
         <NavLink to={"break"}>Break</NavLink>
         </span>
         <span>
-        <NavLink to={"leaveportal"}>Leave Portal</NavLink>
+        <NavLink to={"leaveportal"}>Leave</NavLink>
         </span>
         <span>
         <NavLink to={"holiday"}>Holiday</NavLink>
         </span>
       </main>
       <footer>
-        <NavLink to={"contactus"}>Contact Us</NavLink>
+        <NavLink to={"contactus"}>ContactUs</NavLink>
       </footer>
       </div>
       }{loggin && authUser=="admin" &&
-      <div className='flex gap-7'>
+      <div className='flex gap-5'>
         <header>
         <NavLink to={'home'}>Home</NavLink>
       </header>
       <main className='flex gap-7'>
         <span>
-        <NavLink to={"break"}>Break Management</NavLink>
+        <NavLink to={"break"}>Break</NavLink>
         </span>
         <span>
-        <NavLink to={"leaveportal"}>Leave Approval</NavLink>
+        <NavLink to={"leaveportal"}>Leave</NavLink>
         </span>
       </main>
       <footer>
-        <NavLink to={"contactus"}>Attendance Management</NavLink>
+        <NavLink to={"contactus"}>Attendance</NavLink>
       </footer>
       </div>}
     </section>
