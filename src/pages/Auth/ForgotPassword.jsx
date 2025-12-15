@@ -121,7 +121,7 @@ const ForgotPassword = () => {
       sparkCount={10}
       duration={200}
     >
-      <section className=" flex flex-col">
+      <section className=" RegisterBlock justify-center items-center flex flex-col">
         <Navbar />
         <Toaster />
 

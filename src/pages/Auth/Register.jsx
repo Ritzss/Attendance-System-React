@@ -119,7 +119,7 @@ const Register = () => {
   const payload = {
     ...rest,
     Name,
-    Email,
+    Email:Email.trim().toLowerCase(),
     password: hashedPassword, // encrypted
   };
 
@@ -170,7 +170,7 @@ const Register = () => {
               </header>
               <form 
                 id="leftsideRegistration"
-                action="POST"
+                method="POST"
                 autoComplete="off"
                 className="flex flex-col justify-evenly items-center"
               >

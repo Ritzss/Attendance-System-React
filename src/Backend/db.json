@@ -9,7 +9,8 @@
       "Contact": "9958186814",
       "Name": "Ritanshu Babuta",
       "Email": "ritanshubabuta399@gmail.com",
-      "password": "$2b$10$bEhOiokCmUcoD0AwsNT9LuFfH.sK1NHZI3K7UEe5AE5PtcD3MTmD."
+      "password": "$2b$10$bEhOiokCmUcoD0AwsNT9LuFfH.sK1NHZI3K7UEe5AE5PtcD3MTmD.",
+      "faceEmbedding": []
     },
     {
       "id": "6ac9",
@@ -19,15 +20,35 @@
       "Role": "employee",
       "Contact": "9958182344",
       "Name": "Roushan",
-      "Email": "Roushan@email.com",
-      "password": "$2b$10$ywOJi0YKsDMN82r9Ldu3NewJAlzsxGwuycWyjYfNuzejFHoqmR7ki"
+      "Email": "roushan@gmail.com",
+      "password": "$2b$10$ywOJi0YKsDMN82r9Ldu3NewJAlzsxGwuycWyjYfNuzejFHoqmR7ki",
+      "faceEmbedding": []
+    },
+    {
+      "id": "f1ef",
+      "Address": "Gaziabad",
+      "Department": "IT",
+      "Designation": "Consultant",
+      "Role": "employee",
+      "Contact": "9958483233",
+      "Name": "Shivani Sah",
+      "Email": "shivanisah@gmail.com",
+      "password": "$2b$10$HpGPKaaOCtJkSryHFjrUieUXi6O0krbStZL9Rvk69xZu6J9bA5hA2",
+      "faceEmbedding": []
     }
   ],
-  "attendance": [{}],
-  "login": [{}],
-  "leaves":[{}],
-  "break":[{}],
-  "storage":[{}]
+  "attendance": [
+    {
+      "id": "att_001",
+      "userId": "878c",
+      "date": "2025-12-15",
+      "status": "present",
+      "time": "10:02:11",
+      "method": "face"
+    }
+  ],
+  "login": [],
+  "leaves": [],
+  "break": [],
+  "storage": []
 }
-
-

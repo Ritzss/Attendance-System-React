@@ -107,6 +107,7 @@ const MinicardLogin = ({
                     autoComplete={autocomplete || "off"}
                     type={type || "text"}
                     className="rounded-r-xl  text-black text-md w-[80%] outline-0 bg-[#ffffff96]"
+            
                   />
                 )}
               </div>

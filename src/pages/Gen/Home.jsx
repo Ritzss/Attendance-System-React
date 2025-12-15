@@ -32,12 +32,12 @@ const Home = () => {
         {/* Left Grid */}
         <section className="LeftGrid rounded-4xl flex flex-wrap justify-center w-[48%] p-3">
           <MiniCard
-            color="#0097bd9f"
+            color="#2E70F0"
             title={"Leave Portal"}
             route={"/app/leaveportal"}
           />
           <MiniCard
-            color="#ba01d39f"
+            color="#1AAE51"
             title={"Attendance"}
             route={"/app/attendance"}
           />
@@ -45,8 +45,8 @@ const Home = () => {
 
         {/* Right Grid */}
         <section className="RightGrid rounded-4xl flex  flex-wrap justify-center w-[48%] p-3">
-          <MiniCard color="#fc7100" title={"Break Time"} route={"/app/break"} />
-          <MiniCard color="#fc0000" title={"Holiday"} route={"/app/holiday"} />
+          <MiniCard color="#0AA674" title={"Break Time"} route={"/app/break"} />
+          <MiniCard color="#EF6110" title={"Holiday"} route={"/app/holiday"} />
         </section>
       </article>
     </section>

@@ -14,6 +14,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import ForgotPassword from "../pages/Auth/ForgotPassword";
 import ResetPassword from "../pages/Auth/ResetPassword";
+import Profile from "../pages/Auth/Profile";
 
 const MyRoutes = createBrowserRouter([
   // --------------------------- LOGIN FIRST ---------------------------
@@ -97,6 +98,11 @@ const MyRoutes = createBrowserRouter([
         element: <Contactus />,
         errorElement: <Error />,
       },
+      {
+        path: "profile",
+        element: <Profile />,
+        errorElement: <Error />,  
+      }
     ],
   },
 
