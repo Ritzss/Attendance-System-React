@@ -249,7 +249,6 @@ const Register = () => {
                   </div>
                   <div className="relative">
                     <div className="regis-icons absolute top-[5.87vh] left-[1.5vw] text-xl flex justify-center items-center rounded-l-md bg-[#9eff80] h-[3.8vh] w-[3vw]">
-                      {" "}
                       <FaUserTie />
                     </div>
                     <MinicardLogin

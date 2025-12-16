@@ -10,7 +10,8 @@
       "Name": "Ritanshu Babuta",
       "Email": "ritanshubabuta399@gmail.com",
       "password": "$2b$10$bEhOiokCmUcoD0AwsNT9LuFfH.sK1NHZI3K7UEe5AE5PtcD3MTmD.",
-      "faceEmbedding": []
+      "faceEmbedding": [],
+      "profileimage":""
     },
     {
       "id": "6ac9",
@@ -22,7 +23,8 @@
       "Name": "Roushan",
       "Email": "roushan@gmail.com",
       "password": "$2b$10$ywOJi0YKsDMN82r9Ldu3NewJAlzsxGwuycWyjYfNuzejFHoqmR7ki",
-      "faceEmbedding": []
+      "faceEmbedding": [],
+      "profileimage":""
     },
     {
       "id": "f1ef",
@@ -34,7 +36,8 @@
       "Name": "Shivani Sah",
       "Email": "shivanisah@gmail.com",
       "password": "$2b$10$HpGPKaaOCtJkSryHFjrUieUXi6O0krbStZL9Rvk69xZu6J9bA5hA2",
-      "faceEmbedding": []
+      "faceEmbedding": [],
+      "profileimage":""
     }
   ],
   "attendance": [
