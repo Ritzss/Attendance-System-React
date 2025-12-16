@@ -60,14 +60,15 @@ const Login = () => {
     }
 
     setCurrentUser(result.user);
+    localStorage.setItem("currentUser", JSON.stringify(result.user));
 
-    if (result.user.Role === "admin") {
-      setAuthUser("admin");
-    } else {
-      setAuthUser("employee");
-    }
+    const role = result.user.Role === "admin" ? "admin" : "employee";
+    setAuthUser(role);
+    localStorage.setItem("authUser", role);
 
     setLoggin(true);
+    localStorage.setItem("loggin", "true");
+
     toast.success("Login successful!");
     setLoginForm(loginInit);
     navigate("/app/home");
@@ -85,7 +86,10 @@ const Login = () => {
       <section className="RegisterBlock flex flex-col justify-center items-center">
         <Navbar />
 
-        <form method="POST" className="flex flex-col justify-center items-center">
+        <form
+          method="POST"
+          className="flex flex-col justify-center items-center"
+        >
           <section
             id="login-box"
             className="LoginBlock bg-[#00000041] mx-[10%] my-[5%] rounded-2xl customshadow p-3 flex justify-center items-center"

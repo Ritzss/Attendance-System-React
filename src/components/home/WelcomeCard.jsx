@@ -6,19 +6,21 @@ import CoinFlipAvatar from "../UI/CoinFlipAvatar";
 const WelcomeCard = ({ data }) => {
   console.log(data);
   console.log(data.marked);
+  console.log(data.profileimage);
+  
 
   return (
     <div className="WelcomeBlock flex p-7 justify-between rounded-4xl w-full ">
       {/* Left */}
       <div id="LeftWelcome" className="p-5  rounded-4xl">
         <div className="ImgBlock1 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
-          {data?.profile_image ? (
+          {data?.profileimage ? (
             <img
               className="w-[40vh] h-[35vh] rounded-full"
               style={{
                 border: data.marked ? "10px solid green" : "10px solid red",
               }}
-              src={data.profile_image}
+              src={`http://localhost:5000${data.profileimage}`}
               alt="ProfilePic"
             />
           ) : (

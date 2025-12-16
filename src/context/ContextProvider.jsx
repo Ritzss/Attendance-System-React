@@ -86,7 +86,33 @@ const ContextProvider = ({ children }) => {
     }
   };
 
-  
+  const updateProfileImage = async (file) => {
+    if (!currentUser) return;
+
+    const formData = new FormData();
+    formData.append("image", file);
+    formData.append("id", currentUser.id);
+
+    const res = await fetch("http://localhost:5000/profile", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+
+    if (data.success) {
+      setCurrentUser((prev) => ({
+        ...prev,
+        profileimage: data.profileimage,
+      }));
+      toast.success("Profile image updated");
+    } else {
+      toast.error("Image upload failed");
+    }
+  };
+
   const getLeaves = async () => {
     try {
       const res = await fetch("http://localhost:3001/leaves");
@@ -124,6 +150,30 @@ const ContextProvider = ({ children }) => {
     getLeaves();
     getLogin();
     getStorage();
+  }, []);
+  useEffect(() => {
+    if (currentUser) {
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    }
+  }, [currentUser]);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("currentUser");
+    if (storedUser) {
+      setCurrentUser(JSON.parse(storedUser));
+      setLoggin(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem("currentUser");
+    const savedAuthUser = localStorage.getItem("authUser");
+    const savedLoggin = localStorage.getItem("loggin");
+
+    if (savedUser && savedAuthUser && savedLoggin === "true") {
+      setCurrentUser(JSON.parse(savedUser));
+      setAuthUser(savedAuthUser);
+      setLoggin(true);
+    }
   }, []);
 
   // ---------------------------------------------------------
@@ -227,6 +277,7 @@ const ContextProvider = ({ children }) => {
         setShowOtp,
         email,
         setEmail,
+        updateProfileImage,
       }}
     >
       {children}

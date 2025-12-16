@@ -3,7 +3,7 @@ import { ContextApi } from "../../context/ContextProvider";
 import { NavLink, useNavigate } from "react-router";
 
 const AuthNav = () => {
-  const { loggin, setLoggin, currentUser, setCurrentUser } =
+  const { loggin, setLoggin, currentUser,setCurrentUser, setAuthUser } =
     useContext(ContextApi);
   // console.log(user,setUser,data);
   let navigate = useNavigate();
@@ -12,12 +12,17 @@ const AuthNav = () => {
     <div>
       {loggin ? (
         <span className="flex gap-2">
-            <NavLink to={"profile"}>{currentUser?.Name}</NavLink>
+          <NavLink to={`profile/${currentUser?.id}`}>{currentUser?.Name}</NavLink>
           <span>
             <button
               onClick={() => {
-                setLoggin(false);
                 setCurrentUser(null);
+                setAuthUser(null);
+                setLoggin(false);
+
+                localStorage.removeItem("currentUser");
+                localStorage.removeItem("authUser");
+                localStorage.removeItem("loggin");
                 navigate("/");
               }}
             >

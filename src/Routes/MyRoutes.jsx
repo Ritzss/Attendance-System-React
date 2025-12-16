@@ -99,7 +99,7 @@ const MyRoutes = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path: "profile",
+        path: "profile/:id",
         element: <Profile />,
         errorElement: <Error />,  
       }
