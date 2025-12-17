@@ -99,7 +99,7 @@ const Contactus = () => {
                 type="email"
                 name="email"
                 value={form.email}
-                onChange={(e) => handleChange("email", e.target.value)}
+                // onChange={(e) => handleChange("email", e.target.value)}
                 paddingL="0px"
                 width="100%"
               />
@@ -108,7 +108,7 @@ const Contactus = () => {
               label="Name :"
               name="name"
               value={form.name}
-              onChange={(e) => handleChange("name", e.target.value)}
+              // onChange={(e) => handleChange("name", e.target.value)}
               paddingL="0px"
               width="100%"
             />

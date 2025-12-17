@@ -32,6 +32,7 @@ const dateInit = {
 const ContextProvider = ({ children }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const [currentUser, setCurrentUser] = useState(null);
   const [data, setData] = useState([]);
@@ -265,6 +266,8 @@ const ContextProvider = ({ children }) => {
         setMarked,
         navTo,
         setNavTo,
+        open,
+        setOpen,
 
         // Auth actions
         LoginUser,
