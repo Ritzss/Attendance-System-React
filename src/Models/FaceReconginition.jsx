@@ -4,52 +4,71 @@ import * as faceapi from "face-api.js";
 const FaceRecognition = ({ onSuccess }) => {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const intervalRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
-  
+
+  // 🎥 Start camera
   const startVideo = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
     videoRef.current.srcObject = stream;
   };
-  
+
+  // 📦 Load models
   useEffect(() => {
     const loadModels = async () => {
-      const MODEL_URL = "/models";
-      await Promise.all([
-        faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
-        faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
-        faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
-      ]);
-      setLoaded(true);
-      startVideo();
+      try {
+        const MODEL_URL = "/models";
+
+        await Promise.all([
+          faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
+          faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL),
+          faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL),
+        ]);
+
+        console.log("✅ Models loaded");
+        setLoaded(true);
+        startVideo();
+      } catch (err) {
+        console.error("❌ Model load failed", err);
+      }
     };
 
     loadModels();
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, []);
 
+  // 👀 Face detection loop
+  const handlePlay = () => {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
 
-  const handlePlay = async () => {
     const displaySize = {
-      width: videoRef.current.videoWidth,
-      height: videoRef.current.videoHeight,
+      width: video.videoWidth,
+      height: video.videoHeight,
     };
 
-    faceapi.matchDimensions(canvasRef.current, displaySize);
+    canvas.width = displaySize.width;
+    canvas.height = displaySize.height;
 
-    setInterval(async () => {
-      const detections = await faceapi
-        .detectSingleFace(
-          videoRef.current,
-          new faceapi.TinyFaceDetectorOptions()
-        )
+    faceapi.matchDimensions(canvas, displaySize);
+
+    intervalRef.current = setInterval(async () => {
+      const detection = await faceapi
+        .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
         .withFaceLandmarks()
         .withFaceDescriptor();
 
-      const ctx = canvasRef.current.getContext("2d");
-      ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (detections) {
-        faceapi.draw.drawDetections(canvasRef.current, detections);
-        onSuccess(); // ✅ Face detected
+      if (detection) {
+        const resized = faceapi.resizeResults(detection, displaySize);
+        faceapi.draw.drawDetections(canvas, resized);
+
+        onSuccess?.(); // face detected
       }
     }, 500);
   };
