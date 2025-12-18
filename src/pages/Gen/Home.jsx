@@ -9,7 +9,6 @@ import AttendancePie from "../../components/home/AttendancePie";
 
 const Home = () => {
   const { currentUser, marked } = useContext(ContextApi);
-  console.log(currentUser)
   return (
     <section id="home" className=" HomeBlock ">
       {/* MAIN WELCOME + ATTENDANCE */}

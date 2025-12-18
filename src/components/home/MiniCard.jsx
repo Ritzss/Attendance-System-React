@@ -8,7 +8,7 @@ const MiniCard = ({ color, title, route }) => {
     className="border shadow-[inset_0_0_20px_rgba(255,255,255,0.7)] border-white rounded-4xl mx- m-2 w-full h-[15vh]"
     >
       <div className="text-white flex justify-center items-center h-full w-full text-3xl" >
-        <NavLink to={route}>{title || "Mini Card"}</NavLink>
+        <div>{title || "Mini Card"}</div>
       </div>
     </NavLink>
   );

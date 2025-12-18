@@ -21,9 +21,6 @@ const Body = () => {
         <span>
         <NavLink to={"leaveportal"}>Leave</NavLink>
         </span>
-        <span>
-        <NavLink to={"holiday"}>Holiday</NavLink>
-        </span>
       </main>
       <footer>
         <NavLink to={"contactus"}>ContactUs</NavLink>
@@ -43,7 +40,7 @@ const Body = () => {
         </span>
       </main>
       <footer>
-        <NavLink to={"contactus"}>Attendance</NavLink>
+        <NavLink to={"attendance"}>Attendance</NavLink>
       </footer>
       </div>}
     </section>

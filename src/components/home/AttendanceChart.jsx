@@ -4,8 +4,6 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -50,18 +48,18 @@ const AttendanceChart = () => {
   return (
     <div className="shadow-md w-full h-[28vh] rounded-4xl">
       <div className="w-full h-full">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="120%">
           <BarChart
             data={data}
             margin={{ top: 5, right:30, left: 20, bottom: 50 }}
           >
-            <CartesianGrid stroke="#fff" />
+            <CartesianGrid stroke="#fff" vertical={false} />
             <XAxis
               dataKey="date"
-              angle={-45}
+              angle={45}
               textAnchor="end"
               interval={0}
-              tick={{ fill: "white", fontSize: 12 }}
+              tick={{ fill: "white", fontSize: 0 }}
             />
             <YAxis tick={{ fill: "white", fontSize: 12 }} />
             <Tooltip

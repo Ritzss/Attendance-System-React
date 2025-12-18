@@ -9,7 +9,6 @@ import Contactus from "../pages/Services/Contactus";
 import Leaveportal from "../pages/Services/Leaveportal";
 import Attendance from "../pages/Services/Attendance";
 import Break from "../pages/Services/Break";
-import Holiday from "../pages/Services/Holiday";
 import PrivateRoutes from "./PrivateRoutes";
 import PublicRoutes from "./PublicRoutes";
 import ForgotPassword from "../pages/Auth/ForgotPassword";
@@ -86,11 +85,6 @@ const MyRoutes = createBrowserRouter([
       {
         path: "break",
         element: <Break />,
-        errorElement: <Error />,
-      },
-      {
-        path: "holiday",
-        element: <Holiday />,
         errorElement: <Error />,
       },
       {

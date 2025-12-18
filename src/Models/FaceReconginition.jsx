@@ -6,6 +6,7 @@ const FaceRecognition = ({ onSuccess }) => {
   const canvasRef = useRef(null);
   const intervalRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
+  const lastStatusRef = useRef(null); // "face" | "no-face"
 
   // 🎥 Start camera
   const startVideo = async () => {
@@ -57,7 +58,13 @@ const FaceRecognition = ({ onSuccess }) => {
 
     intervalRef.current = setInterval(async () => {
       const detection = await faceapi
-        .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions())
+        .detectSingleFace(
+          video,
+          new faceapi.TinyFaceDetectorOptions({
+            inputSize: 416,
+            scoreThreshold: 0.5,
+          })
+        )
         .withFaceLandmarks()
         .withFaceDescriptor();
 
@@ -65,10 +72,16 @@ const FaceRecognition = ({ onSuccess }) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       if (detection) {
-        const resized = faceapi.resizeResults(detection, displaySize);
-        faceapi.draw.drawDetections(canvas, resized);
-
-        onSuccess?.(); // face detected
+        if (lastStatusRef.current !== "face") {
+          console.log("✅ FACE");
+          lastStatusRef.current = "face";
+          onSuccess?.();
+        }
+      } else {
+        if (lastStatusRef.current !== "no-face") {
+          console.log("❌ NO FACE");
+          lastStatusRef.current = "no-face";
+        }
       }
     }, 500);
   };
@@ -81,16 +94,15 @@ const FaceRecognition = ({ onSuccess }) => {
         ref={videoRef}
         autoPlay
         muted
-        onPlay={handlePlay}
+        onLoadedMetadata={handlePlay}
         className="rounded-xl"
-        width="400"
+        width="800"
         height="300"
       />
 
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0"
-      />
+      <canvas ref={canvasRef} className="absolute top-0 left-0" />
+
+      
     </div>
   );
 };

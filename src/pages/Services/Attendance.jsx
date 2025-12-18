@@ -1,11 +1,59 @@
-import React from 'react'
+import React from "react";
+import { PiStarFourFill } from "react-icons/pi";
 
 const Attendance = () => {
-//! HAVE TO MAKE IT RESPONSIVE
+  //! HAVE TO MAKE IT RESPONSIVE
 
   return (
-    <div className='AttendanceBlock'>Attendance</div>
-  )
-}
+    <div>
+      <div className="slider AttendanceBlock bg-[#00246f89] rounded-2xl w-[98%] m-auto h-full">
+        <div className=" track flex">
+          <div className=" flex text-7xl gap-13 text-white transfrom m-4">
+            <div className="star text-sm self-end">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-xl self-start">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-2xl self-center">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-3xl self-end">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-4xl self-start">
+              <PiStarFourFill />
+            </div>
+          </div>
+          <div className="text-7xl m-4 font-extrabold">
+            <span className="text-red-500 drop-shadow-md">A</span>
+            <span className="text-green-500 drop-shadow-md">ttendance</span>
+            <span className="text-red-500 drop-shadow-md">P</span>
+            <span className="text-green-500 drop-shadow-md">age</span>
+          </div>
 
-export default Attendance
+          <div className="flex text-7xl gap-13 text-white transfrom m-4">
+            <div className="star text-4xl self-start">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-3xl self-end">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-2xl self-center">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-xl self-start">
+              <PiStarFourFill />
+            </div>
+            <div className="star text-sm self-end">
+              <PiStarFourFill />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  );
+};
+
+export default Attendance;

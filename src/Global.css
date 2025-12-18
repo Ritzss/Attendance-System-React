@@ -8,6 +8,21 @@ body {
   /* animation: liquidWave 8s ease-in-out infinite; */
 }
 
+.star{
+  animation: spin 2s linear infinite;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
@@ -658,4 +673,22 @@ border: 1px solid rgba(0, 151, 189, 0.54);
     transform: rotate(0deg);
   }
   
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(250%);
+  }
+  to {
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes spin {
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(360deg);
+  }  
 }

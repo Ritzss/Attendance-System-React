@@ -81,10 +81,10 @@ const AttendancePie = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "right",
+        position: "center",
         labels: {
           color: "#ffffff",
-          font: { size: 8 },
+          font: { size: -1 },
         },
       },
     },
