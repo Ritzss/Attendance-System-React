@@ -1,55 +1,29 @@
 {
   "users": [
     {
-      "id": "878c",
-      "Address": "Mehrauli,New Delhi",
+      "id": "0926",
+      "Address": "delhi",
       "Department": "IT",
-      "Designation": "Associate Developer",
+      "Designation": "associate dev",
       "Role": "admin",
-      "Contact": "9958186814",
+      "Contact": "9899899908",
       "Name": "Ritanshu Babuta",
-      "Email": "ritanshubabuta399@gmail.com",
-      "password": "$2b$10$bEhOiokCmUcoD0AwsNT9LuFfH.sK1NHZI3K7UEe5AE5PtcD3MTmD.",
-      "faceEmbedding": [],
-      "profileimage": "/uploads/profile-images/878c.jpg"
+      "Email": "ritanshubabuta@gmail.com",
+      "password": "$2b$10$W7IvKWyS0Ee3o7Ea0qYbJ.0Ns2cnQ550oJrXmixnsRMAWSZg2p9LO"
     },
     {
-      "id": "6ac9",
-      "Address": "Aya Nagar,Delhi",
-      "Department": "IT",
-      "Designation": "Graphic Designer",
+      "id": "0783",
+      "Address": "addsss",
+      "Department": "sdd",
+      "Designation": "dsf",
       "Role": "employee",
-      "Contact": "9958182344",
-      "Name": "Roushan",
-      "Email": "roushan@gmail.com",
-      "password": "$2b$10$ywOJi0YKsDMN82r9Ldu3NewJAlzsxGwuycWyjYfNuzejFHoqmR7ki",
-      "faceEmbedding": [],
-      "profileimage": "/uploads/profile-images/6ac9.jpg"
-    },
-    {
-      "id": "f1ef",
-      "Address": "Gaziabad",
-      "Department": "IT",
-      "Designation": "Consultant",
-      "Role": "employee",
-      "Contact": "9958483233",
-      "Name": "Shivani Sah",
-      "Email": "shivanisah@gmail.com",
-      "password": "$2b$10$HpGPKaaOCtJkSryHFjrUieUXi6O0krbStZL9Rvk69xZu6J9bA5hA2",
-      "faceEmbedding": [],
-      "profileimage": ""
+      "Contact": "445556",
+      "Name": "Ritanshu Babuta",
+      "Email": "ritanshu@gmail.com",
+      "password": "$2b$10$NzAbSbu9cyZJVHtAHrmGf.plcbhu9refricL3KQ8w.VSjtn8ywx3m"
     }
   ],
-  "attendance": [
-    {
-      "id": "att_001",
-      "userId": "878c",
-      "date": "2025-12-15",
-      "status": "present",
-      "time": "10:02:11",
-      "method": "face"
-    }
-  ],
+  "attendance": [],
   "login": [],
   "leaves": [],
   "break": [],

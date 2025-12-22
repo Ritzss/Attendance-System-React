@@ -2,13 +2,12 @@
 
 body {
   background: radial-gradient(circle at 80% 30%, #a0fff2, transparent 60%),
-              radial-gradient(circle at 50% 80%, #06879e, transparent 70%),
-              #0162a3;
+    radial-gradient(circle at 50% 80%, #06879e, transparent 70%), #0162a3;
   background-size: 200% 200%;
   /* animation: liquidWave 8s ease-in-out infinite; */
 }
 
-.star{
+.star {
   animation: spin 2s linear infinite;
 }
 
@@ -31,12 +30,13 @@ img {
   backface-visibility: hidden;
 }
 
-.staticbg{
-  background: 
-    repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%) 50% 0/2500px 2500px,
-    repeating-conic-gradient(#000 0 0.0001%,#fff 0 0.0002%) 60% 60%/2500px 2500px;
+.staticbg {
+  background: repeating-radial-gradient(#000 0 0.0001%, #fff 0 0.0002%) 50% 0/2500px
+      2500px,
+    repeating-conic-gradient(#000 0 0.0001%, #fff 0 0.0002%) 60% 60%/2500px
+      2500px;
   background-blend-mode: difference;
-  animation: b .2s infinite alternate;
+  animation: b 0.2s infinite alternate;
 }
 
 .return-knob {
@@ -55,14 +55,14 @@ img {
 
   /* Apply the animation */
   animation: infinite-spin 5s linear infinite; /* 5s duration, linear timing, infinite loop */
-  
+
   /* Smooth transition for when we stop the rotation */
-  transition: transform 0.3s ease-out; 
+  transition: transform 0.3s ease-out;
 }
 
 /* On hover: Pause the animation and snap the rotation to 0 degrees */
 .return-knob:hover {
-  animation: rewind-signal 5s alternate ; /* Play rewind animation on hover */
+  animation: rewind-signal 5s alternate; /* Play rewind animation on hover */
   transform: rotate(0deg); /* Explicitly reset rotation on hover */
 }
 
@@ -76,578 +76,585 @@ img {
   border-radius: 25px;
 }
 
-.glass{
+.glass {
   background: rgba(0, 0, 0, 0.226);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(8.7px);
--webkit-backdrop-filter: blur(8.7px);
-border: 1px solid rgba(0, 151, 189, 0.54);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+  border: 1px solid rgba(0, 151, 189, 0.54);
 }
 
 .blue-metal {
-  background: linear-gradient(to bottom,#ffffff,#a0fff2, #06879e, #0162a3);
+  background: linear-gradient(to bottom, #ffffff, #a0fff2, #06879e, #0162a3);
   border-left: none;
   border-right: none;
 }
 
 .black-metal {
-  background: linear-gradient(to bottom,#ffffff, #353535, #000000);
+  background: linear-gradient(to bottom, #ffffff, #353535, #000000);
   border-left: none;
   border-right: none;
 }
 
 .combine-metal {
-  background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2 ,#ffffffa1, #353535, #000000);
+  background: linear-gradient(
+    to bottom,
+    #0162a3,
+    #06879e,
+    #a0fff2,
+    #ffffffa1,
+    #353535,
+    #000000
+  );
   border-left: none;
   border-right: none;
 }
 
 .customshadow {
-  box-shadow:
-    inset 2px 2px 8px rgba(0, 0, 0, 0.2),
-    inset -2px -2px 8px rgba(0,0,0,0.5),
-    0 0 30px rgba(123, 0, 255, 0.2);
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(123, 0, 255, 0.2);
 }
 
-@media (max-width:320px) {
-  .LoginBlock{
+@media (max-width: 320px) {
+  .LoginBlock {
     display: block;
     width: 110%;
     margin: 0;
   }
-  .NavBLock{
+  .NavBLock {
     flex-wrap: nowrap;
     font-size: 10px;
     width: 100%;
     gap: 0px;
   }
-  #rightsideLogin{
+  #rightsideLogin {
     display: none;
     width: 100%;
     justify-content: space-between;
     border-radius: 0.1%;
-    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to bottom, #0162a3, #06879e, #a0fff2);
   }
-  #leftsideLogin{
-    border-radius:2%;
+  #leftsideLogin {
+    border-radius: 2%;
     width: 100%;
-    justify-content:center;
-    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    justify-content: center;
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  .icons{
+  .icons {
     width: 8vw;
     height: 4.2vh;
-    bottom: 14% ;
+    bottom: 14%;
     left: 10vw;
   }
-  .icons1{
+  .icons1 {
     width: 8vw;
     height: 4.2vh;
-    bottom: 14% ;
-    right:3.5vw;
+    bottom: 14%;
+    right: 3.5vw;
   }
-  #inputdiv{
+  #inputdiv {
     width: 100%;
   }
-  #radiodiv{
-    display: block ;
-    width:70%;
+  #radiodiv {
+    display: block;
+    width: 70%;
   }
-  .FooterBlock{
+  .FooterBlock {
     font-size: 70%;
   }
-  .registerBlock{
+  .registerBlock {
     display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  #rightsideRegister{
+  #rightsideRegister {
     display: none;
   }
-  .rightsideRegister{
+  .rightsideRegister {
     background: transparent;
   }
-  .regis-icons{
+  .regis-icons {
     width: 10%;
     height: 4.2vh;
     top: 52%;
   }
-  .regis-icons1{
+  .regis-icons1 {
     width: 10%;
     height: 4.2vh;
-    top:53%;
+    top: 53%;
   }
-  .regis-icons2{
+  .regis-icons2 {
     width: 10%;
     height: 4vh;
-    top:53%;
+    top: 53%;
   }
-  .ForgotBlock{
+  .ForgotBlock {
     display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-   #right{
+  #right {
     display: none;
   }
-  #left{
+  #left {
     width: 100%;
   }
-   .otp-box{
+  .otp-box {
     width: 100%;
     margin: 0;
     padding: 0;
     height: 30vh;
   }
-  .fpassIcons{
+  .fpassIcons {
     height: 4.2vh;
     width: 15vw;
     bottom: 6%;
     left: 9%;
   }
-  .otp-button{
+  .otp-button {
     width: 50%;
   }
-  .LogoBlock{
+  .LogoBlock {
     display: none;
   }
-  #home>article{
+  #home > article {
     margin: 0;
     margin-top: 2vh;
   }
-  .WelcomeBlock{
+  .WelcomeBlock {
     display: block;
     padding: 0% 1%;
   }
-  #LeftWelcome{
+  #LeftWelcome {
     width: 100%;
   }
-  #RightWelcome{
+  #RightWelcome {
     gap: 1vw;
     width: 98%;
     height: 30%;
     margin: 0% 2%;
   }
-  .SecondBlock{
-    display: flex ;
+  .SecondBlock {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0% 4%;
     gap: 1vw;
   }
-  #chart{
+  #chart {
     width: 100%;
     margin-bottom: 1vh;
   }
-  #pie{
+  #pie {
     width: 100%;
   }
-  .LeftGrid{
+  .LeftGrid {
     width: 100%;
   }
-  .RightGrid{
+  .RightGrid {
     width: 100%;
   }
-  .ThirdBlock{
+  .ThirdBlock {
     flex-direction: column;
-    gap:0;
+    gap: 0;
   }
-  .TextBlock{
+  .TextBlock {
     margin: 0;
   }
-  .ImgBlock1{
+  .ImgBlock1 {
     width: 25vh;
     height: 25vh;
   }
-  .ContactBlock>header{
+  .ContactBlock > header {
     margin-bottom: 40vh;
   }
-  .ContactBlock>footer{
+  .ContactBlock > footer {
     display: block;
   }
-  .ContactBlock{
+  .ContactBlock {
     height: auto;
   }
-  .FormBlock{
+  .FormBlock {
     width: 100%;
   }
-  #rightcontact{
+  #rightcontact {
     width: 100%;
   }
-  #SubmitButton{
+  #SubmitButton {
     position: relative;
   }
 }
-@media (min-width: 321px) and (max-width:425px) {
-  .LoginBlock{
+@media (min-width: 321px) and (max-width: 425px) {
+  .LoginBlock {
     display: block;
     width: 100%;
     margin: 0;
   }
-  .LogoBlock{
+  .LogoBlock {
     display: none;
   }
-  .NavBLock{
+  .NavBLock {
     flex-wrap: nowrap;
     font-size: 12px;
     width: 100%;
     gap: 10px;
   }
-  #rightsideLogin{
+  #rightsideLogin {
     width: 100%;
     justify-content: space-between;
     border-radius: 3% 3% 0% 0%;
-    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to bottom, #0162a3, #06879e, #a0fff2);
   }
-  #leftsideLogin{
-    border-radius:0% 0% 3% 3%;
+  #leftsideLogin {
+    border-radius: 0% 0% 3% 3%;
     width: 100%;
     justify-content: space-around;
-    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  .icons{
+  .icons {
     width: 6vw;
     height: 4.2vh;
-    bottom: 15% ;
+    bottom: 15%;
     left: 12vw;
   }
-  .icons1{
+  .icons1 {
     width: 6vw;
     height: 4.2vh;
-    bottom: 15% ;
-    right:6.5vw;
+    bottom: 15%;
+    right: 6.5vw;
   }
-  #radiodiv{
-    display: block ;
-    width:70%;
+  #radiodiv {
+    display: block;
+    width: 70%;
   }
-  .FooterBlock{
+  .FooterBlock {
     font-size: 82%;
   }
-  .registerBlock{
+  .registerBlock {
     display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  #rightsideRegister{
+  #rightsideRegister {
     width: 100%;
   }
-  .rightsideRegister{
+  .rightsideRegister {
     background: transparent;
   }
-  .regis-icons{
+  .regis-icons {
     width: 10%;
     height: 4.2vh;
     top: 52%;
   }
-  .regis-icons1{
-    width: 10%;
-    height: 4.2vh;
-    top:53%;
-  }
-  .regis-icons2{
-    width: 10%;
-    height: 4vh;
-    top:53%;
-  }
-  .ForgotBlock{
-    display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
-  }
-   #right{
-    width: 100%;
-    height: 70vh;
-  }
-  #left{
-    width: 100%;
-  }
-   .otp-box{
-    width: 100%;
-  }
-  .fpassIcons{
-    height: 4.2vh;
-    width: 6vw;
-    bottom: 6%;
-    left: 9%;
-  }
-  .otp-button{
-    width: 50%;
-  }
-  .WelcomeBlock{
-    display: block;
-    padding: 0% 1%;
-  }
-  #LeftWelcome{
-    width: 100%;
-  }
-  #RightWelcome{
-    gap: 1vw;
-    width: 98%;
-    height: 30%;
-    margin: 0% 2%;
-  }
-  .SecondBlock{
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    margin: 0% 4%;
-    gap: 1vw;
-  }
-  #chart{
-    width: 100%;
-    margin-bottom: 1vh;
-  }
-  #pie{
-    width: 100%;
-  }
-  .LeftGrid{
-    width: 100%;
-  }
-  .RightGrid{
-    width: 100%;
-  }
-  .ThirdBlock{
-    flex-direction: column;
-    gap:0;
-  }
-  .TextBlock{
-    margin: 0;
-  }
-  .ImgBlock1{
-    width: 25vh;
-    height: 25vh;
-  }
-  .ContactBlock>header{
-    margin-bottom: 30vh;
-  }
-  .ContactBlock>footer{
-    display: block;
-  }
-  .ContactBlock{
-    height: auto;
-  }
-  .FormBlock{
-    width: 100%;
-  }
-  #rightcontact{
-    width: 100%;
-  }
-  #SubmitButton{
-    position: relative;
-  }
-}
-@media (min-width: 451px) and (max-width: 770px) {
-  .NavBLock{
-    margin: 5%;
-    gap:18px;
-  }
-  .LoginBlock{
-    display: block;
-  }
-  #rightsideLogin{
-    width: 100%;
-    justify-content: space-evenly;
-    border-radius: 0.1%;
-    background: linear-gradient(to bottom,#0162a3, #06879e, #a0fff2);
-  }
-  #leftsideLogin{
-    border-radius:0.1%;
-    width: 100%;
-    justify-content: space-evenly;
-    background: linear-gradient(to top,#0162a3, #06879e, #a0fff2);
-  }
-  .icons{
-    width: 6vw;
-    height: 4.2vh;
-    bottom: 15% ;
-    left: 7vw;
-  }
-  .icons1{
-    width: 6vw;
-    height: 4.2vh;
-    bottom: 15% ;
-    right:4.5vw;
-  }
-  .registerBlock{
-    display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
-  }
-  #rightsideRegister{
-    width: 100%;
-  }
-  .rightsideRegister{
-    background: transparent;
-  }
-  .regis-icons{
+  .regis-icons1 {
     width: 10%;
     height: 4.2vh;
     top: 53%;
   }
-  .regis-icons1{
-    width: 10%;
-    height: 4.2vh;
-    top:52%;
-  }
-  .regis-icons2{
+  .regis-icons2 {
     width: 10%;
     height: 4vh;
-    top:53%;
+    top: 53%;
   }
-  .ForgotBlock{
+  .ForgotBlock {
     display: block;
-    background:linear-gradient(to top,#0162a3, #06879e, #a0fff2);
-    padding: 5vh;
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  #right{
+  #right {
+    width: 100%;
+    height: 70vh;
+  }
+  #left {
     width: 100%;
   }
-  #left{
+  .otp-box {
     width: 100%;
   }
-  .otp-box{
-    width: 60%;
-  }
-  .fpassIcons{
+  .fpassIcons {
     height: 4.2vh;
     width: 6vw;
     bottom: 6%;
     left: 9%;
   }
-  .WelcomeBlock{
+  .otp-button {
+    width: 50%;
+  }
+  .WelcomeBlock {
     display: block;
     padding: 0% 1%;
   }
-  #LeftWelcome{
+  #LeftWelcome {
     width: 100%;
   }
-  #RightWelcome{
+  #RightWelcome {
     gap: 1vw;
     width: 98%;
     height: 30%;
     margin: 0% 2%;
   }
-  .SecondBlock{
-    display: flex ;
+  .SecondBlock {
+    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0% 4%;
     gap: 1vw;
   }
-  #chart{
+  #chart {
     width: 100%;
     margin-bottom: 1vh;
   }
-  #pie{
-    width: 50%;
+  #pie {
+    width: 100%;
+  }
+  .LeftGrid {
+    width: 100%;
+  }
+  .RightGrid {
+    width: 100%;
+  }
+  .ThirdBlock {
+    flex-direction: column;
+    gap: 0;
+  }
+  .TextBlock {
+    margin: 0;
+  }
+  .ImgBlock1 {
+    width: 25vh;
+    height: 25vh;
+  }
+  .ContactBlock > header {
+    margin-bottom: 30vh;
+  }
+  .ContactBlock > footer {
+    display: block;
+  }
+  .ContactBlock {
+    height: auto;
+  }
+  .FormBlock {
+    width: 100%;
+  }
+  #rightcontact {
+    width: 100%;
+  }
+  #SubmitButton {
+    position: relative;
   }
 }
-@media (min-width:771px) and (max-width: 1024px) {
-  .NavBLock{
+@media (min-width: 451px) and (max-width: 770px) {
+  .NavBLock {
     margin: 5%;
-    gap: 90px;
+    gap: 18px;
   }
-  
-  .icons{
+  .LoginBlock {
+    display: block;
+  }
+  #rightsideLogin {
+    width: 100%;
+    justify-content: space-evenly;
+    border-radius: 0.1%;
+    background: linear-gradient(to bottom, #0162a3, #06879e, #a0fff2);
+  }
+  #leftsideLogin {
+    border-radius: 0.1%;
+    width: 100%;
+    justify-content: space-evenly;
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
+  }
+  .icons {
+    width: 6vw;
     height: 4.2vh;
-    bottom: 14%;
+    bottom: 15%;
+    left: 7vw;
   }
-  .icons1{
+  .icons1 {
+    width: 6vw;
     height: 4.2vh;
-    bottom: 14%;
+    bottom: 15%;
+    right: 4.5vw;
   }
-  .FooterBlock{
-    font-size: 90%;
+  .registerBlock {
+    display: block;
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
   }
-  .regis-icons{
+  #rightsideRegister {
+    width: 100%;
+  }
+  .rightsideRegister {
+    background: transparent;
+  }
+  .regis-icons {
+    width: 10%;
+    height: 4.2vh;
+    top: 53%;
+  }
+  .regis-icons1 {
     width: 10%;
     height: 4.2vh;
     top: 52%;
   }
-  .regis-icons1{
-    width: 10%;
-    height: 4.2vh;
-    top:53%;
-  }
-  .regis-icons2{
+  .regis-icons2 {
     width: 10%;
     height: 4vh;
-    top:53%;
+    top: 53%;
   }
-  #right{
+  .ForgotBlock {
+    display: block;
+    background: linear-gradient(to top, #0162a3, #06879e, #a0fff2);
+    padding: 5vh;
+  }
+  #right {
+    width: 100%;
+  }
+  #left {
+    width: 100%;
+  }
+  .otp-box {
+    width: 60%;
+  }
+  .fpassIcons {
+    height: 4.2vh;
+    width: 6vw;
+    bottom: 6%;
+    left: 9%;
+  }
+  .WelcomeBlock {
+    display: block;
+    padding: 0% 1%;
+  }
+  #LeftWelcome {
+    width: 100%;
+  }
+  #RightWelcome {
+    gap: 1vw;
+    width: 98%;
+    height: 30%;
+    margin: 0% 2%;
+  }
+  .SecondBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0% 4%;
+    gap: 1vw;
+  }
+  #chart {
+    width: 100%;
+    margin-bottom: 1vh;
+  }
+  #pie {
+    width: 50%;
+  }
+}
+@media (min-width: 771px) and (max-width: 1024px) {
+  .NavBLock {
+    margin: 5%;
+    gap: 90px;
+  }
+
+  .icons {
+    height: 4.2vh;
+    bottom: 14%;
+  }
+  .icons1 {
+    height: 4.2vh;
+    bottom: 14%;
+  }
+  .FooterBlock {
+    font-size: 90%;
+  }
+  .regis-icons {
+    width: 10%;
+    height: 4.2vh;
+    top: 52%;
+  }
+  .regis-icons1 {
+    width: 10%;
+    height: 4.2vh;
+    top: 53%;
+  }
+  .regis-icons2 {
+    width: 10%;
+    height: 4vh;
+    top: 53%;
+  }
+  #right {
     width: 140%;
   }
-  .otp-box{
+  .otp-box {
     width: 70%;
   }
-  .fpassIcons{
+  .fpassIcons {
     height: 4.2vh;
     width: 4vw;
     bottom: 5%;
     left: 10%;
   }
-  .WelcomeBlock{
+  .WelcomeBlock {
     display: block;
   }
-  #LeftWelcome{
+  #LeftWelcome {
     width: 100%;
   }
-  #RightWelcome{
+  #RightWelcome {
     flex-direction: row;
     gap: 2vw;
     width: 100%;
   }
-  .SecondBlock{
+  .SecondBlock {
     width: 92%;
     margin: 0% 4%;
     gap: 2vw;
   }
-
 }
-@media (min-width:1025px) and (max-width: 1440px) {
-  .NavBLock{
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .NavBLock {
     margin: 5%;
   }
-  .icons{
-    height: 4.2vh;
+  .icons {
+    height: 33%;
     bottom: 15%;
     left: 10%;
   }
-  .icons1{
-    height: 4.2vh;
+  .icons1 {
+    height: 33%;
     bottom: 15%;
-    width: 3vw;
+    width: 8%;
     right: 3%;
   }
-  .regis-icons{
+  .regis-icons {
     width: 10%;
     height: 4.2vh;
     top: 53%;
   }
-  .regis-icons1{
+  .regis-icons1 {
     width: 10%;
     height: 4.2vh;
-    top:52%;
+    top: 52%;
   }
-  .regis-icons2{
+  .regis-icons2 {
     width: 10%;
     height: 4vh;
-    top:53%;
+    top: 53%;
   }
-  .fpassIcons{
+  .fpassIcons {
     height: 4.3vh;
     width: 4vw;
     bottom: 6%;
     left: 7%;
   }
-  .otp-box{
+  .otp-box {
     width: 70%;
   }
 }
-@media (min-width:1441px) {
-  div{
+@media (min-width: 1441px) {
+  div {
     display: none;
   }
 }
-@keyframes b{
-  100% {background-position: 50% 0, 60% 50%}
+@keyframes b {
+  100% {
+    background-position: 50% 0, 60% 50%;
+  }
 }
 
 /* Define the infinite rotation animation */
@@ -660,9 +667,15 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   }
 }
 @keyframes liquidWave {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 @keyframes rewind-signal {
@@ -672,7 +685,6 @@ border: 1px solid rgba(0, 151, 189, 0.54);
   to {
     transform: rotate(0deg);
   }
-  
 }
 
 @keyframes slide {
@@ -685,10 +697,10 @@ border: 1px solid rgba(0, 151, 189, 0.54);
 }
 
 @keyframes spin {
-  from{
-    transform: rotate(0deg)
+  from {
+    transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(360deg);
-  }  
+  }
 }

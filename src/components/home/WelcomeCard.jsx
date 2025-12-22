@@ -27,13 +27,13 @@ const WelcomeCard = ({ data }) => {
   };
 
   return (
-    <div className="WelcomeBlock flex p-7 justify-between rounded-4xl w-full ">
+    <div className="WelcomeBlock flex p-7 rounded-4xl w-full ">
       {/* Left */}
       <div id="LeftWelcome" className="p-5  rounded-4xl">
         <div className="ImgBlock1 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
           {data?.profileimage ? (
             <img
-              className="w-[40vh] h-[35vh] rounded-full"
+              className="w-[40vh] h-[25vh] rounded-full"
               style={{
                 border: data.marked ? "10px solid green" : "10px solid red",
               }}
@@ -61,7 +61,7 @@ const WelcomeCard = ({ data }) => {
       </div>
 
       {/* Right */}
-      <div id="RightWelcome" className="flex flex-col justify-between  w-[41%]">
+      <div id="RightWelcome" className="flex flex-col justify-evenly  w-[41%]">
         {/* Today's attendance */}
         <div className="flex flex-col p-5 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
           <div className="text-white text-4xl">Today's Attendance:</div>
