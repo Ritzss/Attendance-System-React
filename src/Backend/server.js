@@ -129,6 +129,69 @@ app.post("/profile", upload.single("image"), (req, res) => {
 
   res.json({ success: true, profileimage: imagePath });
 });
+// --------------------------------------------------
+// Attendance Marker
+// --------------------------------------------------
+
+// --------------------------------------------------
+// ATTENDANCE MARK
+// --------------------------------------------------
+app.post("/attendance", (req, res) => {
+  const { userId } = req.body;
+
+  if (!userId) {
+    return res
+      .status(400)
+      .json({ success: false, message: "userId missing" });
+  }
+
+  const dbPath = "./src/backend/db.json";
+  const db = JSON.parse(fs.readFileSync(dbPath));
+
+  // ✅ validate user exists
+  const user = db.users.find((u) => u.id === userId);
+  if (!user) {
+    return res
+      .status(404)
+      .json({ success: false, message: "User not found" });
+  }
+
+  const today = new Date().toISOString().split("T")[0];
+
+  // 🛡 prevent duplicate attendance
+  const alreadyMarked = db.attendance.find(
+    (a) => a.userId === userId && a.date === today
+  );
+
+  if (alreadyMarked) {
+    return res.json({
+      success: false,
+      message: "Attendance already marked",
+    });
+  }
+
+  const now = new Date();
+
+  const attendance = {
+    id: Date.now().toString(),
+    userId: userId,
+    name: user.Name,
+    department: user.Department,
+    role: user.Role,
+    date: today,
+    time: now.toTimeString().split(" ")[0],
+    status: "present",
+  };
+
+  db.attendance.push(attendance);
+  fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+
+  res.json({
+    success: true,
+    message: "Attendance marked",
+    attendance,
+  });
+});
 
 
 // --------------------------------------------------
