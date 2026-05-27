@@ -7,11 +7,16 @@ import { MdOutlineDriveFileRenameOutline, MdOutlineMail } from "react-icons/md";
 import { IoMdContact } from "react-icons/io";
 import { GiOfficeChair } from "react-icons/gi";
 import { FaAddressCard, FaUserTie } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
 const Profile = () => {
   const [preview, setPreview] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const { currentUser, updateProfileImage } = useContext(ContextApi);
+  const { id } = useParams(); // "0926"
+
+  console.log("Profile ID:", id);
+
 
   const handleFileChange = (e) => {
     console.log(e.target.files);
@@ -68,15 +73,15 @@ const Profile = () => {
                     Confirm Profile Image
                   </button>
                   <div className="bg-slate-500 self-end border p-1 rounded-md">
-                  <label htmlFor="Image" >Choose Another</label>
+                    <label htmlFor="Image">Choose Another</label>
                     <input
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    type="file"
-                    name="Image"
-                    id="Image"
-                    hidden
-                  />
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      type="file"
+                      name="Image"
+                      id="Image"
+                      hidden
+                    />
                   </div>
                 </div>
               </div>

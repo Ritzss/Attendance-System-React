@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { ContextApi } from "../../context/ContextProvider";
 import FaceRecognition from "../../Models/FaceReconginition";
+import SpotlightCard from "../UI/SpotLightCard";
 
 //! HAVE TO MAKE IT RESPONSIVE
 
@@ -27,29 +28,13 @@ const WelcomeCard = ({ data }) => {
   };
 
   return (
-    <div className="WelcomeBlock flex p-7 rounded-4xl w-full ">
+    <div className="WelcomeBlock flex gap-3 m-auto rounded-4xl w-full ">
       {/* Left */}
-      <div id="LeftWelcome" className="p-5  rounded-4xl">
-        <div className="ImgBlock1 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000] -m-5 w-[35vh] h-[35vh] flex items-center justify-center">
-          {data?.profileimage ? (
-            <img
-              className="w-[40vh] h-[25vh] rounded-full"
-              style={{
-                border: data.marked ? "10px solid green" : "10px solid red",
-              }}
-              src={`http://localhost:5000${data.profileimage}`}
-              alt="ProfilePic"
-            />
-          ) : (
-            <CoinFlipAvatar />
-          )}
-        </div>
-
-        <div className="TextBlock rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] -mt-[10vh] ml-[4vh] p-5">
-          <h1 className="text-white text-3xl text-right">
-            Welcome Back, {data?.Name}!
-          </h1>
-          <p className="text-white text-lg mt-5">
+      <div id="LeftWelcome" className="rounded-4xl">
+        <SpotlightCard
+          className="TextBlock bg-transparent rounded-2xl h-full shadow-[inset_0_0_30px_rgba(0,0,0,0.7)] p-5">
+          <h1 className="text-white text-3xl">Welcome Back, {data?.Name}!</h1>
+          <p className="text-white text-xl mt-7">
             Welcome back to the flow! Your data is synced, your tasks are ready,
             and your energy is unmatched.
             <br />
@@ -57,32 +42,29 @@ const WelcomeCard = ({ data }) => {
               Let’s create something awesome today.
             </span>
           </p>
-        </div>
+        </SpotlightCard>
       </div>
 
       {/* Right */}
-      <div id="RightWelcome" className="flex flex-col justify-evenly  w-[41%]">
+      <div id="RightWelcome" className="flex flex-col justify-end w-full">
         {/* Today's attendance */}
-        <div className="flex flex-col p-5 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
+        <SpotlightCard className="flex flex-col p-5 bg-transparent rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
           <div className="text-white text-4xl">Today's Attendance:</div>
           <div className="flex justify-end px-9 text-white text-6xl">
             {data?.marked ? "1" : "0"}/1
           </div>
-        </div>
 
-        {/* Mark Attendance */}
-        <div className="rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] w-full ">
           <div className="text-white p-3 text-4xl">Mark Attendance:</div>
 
           <div
             className={`text-white text-2xl text-center m-5 p-3 rounded-2xl shadow-[inset_0_0_13px_rgba(255,255,255,0.7)] 
               hover:cursor-pointer hover:scale-105 duration-300`}
-            style={{ backgroundColor: data?.marked ? "green" : "red" }}
+            style={{ backgroundColor: data?.marked ? "green" : "#EF6110" }}
             onClick={handleAttendance}
           >
             {data?.marked ? "Attendance Marked" : "Mark Attendance"}
           </div>
-        </div>
+        </SpotlightCard>
         <div
           className={`fixed top-0 left-0 w-full p-15 h-screen flex flex-col justify-between items-center z-1 bg-[#00000099] transition-opacity duration-300 ease-in-out ${
             open

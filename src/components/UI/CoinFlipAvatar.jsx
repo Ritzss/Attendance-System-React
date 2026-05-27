@@ -24,16 +24,15 @@ export default function CoinFlipAvatar() {
   }, []);
 
   return (
-    <div className="ImgBlock1 flex justify-center items-center w-[40vh] h-[35vh] rounded-full ">
+    <div className="ImgBlock1 flex justify-center items-center w-[8vh] h-[8vh] rounded-full ">
       <img
         src={images[index]}
-        className={`
-          w-full h-full  object-contain rounded-full transition-transform duration-1000
+        className={`  object-contain rounded-full transition-transform duration-1000
           ${flip ? "rotate-y-180" : ""}
         `}
         style={{
           transformStyle: "preserve-3d",
-          border: marked ? "10px solid green" : "10px solid red",
+          border: marked ? "3px solid green" : "3px solid red",
         }}
         alt="avatar"
       />

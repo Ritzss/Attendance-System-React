@@ -25,6 +25,7 @@
     "dayjs": "^1.11.19",
     "express": "^5.2.1",
     "face-api.js": "^0.22.2",
+    "framer-motion": "^12.34.0",
     "gsap": "^3.13.0",
     "json-server": "1.0.0-beta.3",
     "multer": "^2.0.2",

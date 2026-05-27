@@ -4,7 +4,7 @@ body {
   background: radial-gradient(circle at 80% 30%, #a0fff2, transparent 60%),
     radial-gradient(circle at 50% 80%, #06879e, transparent 70%), #0162a3;
   background-size: 200% 200%;
-  /* animation: liquidWave 8s ease-in-out infinite; */
+  /* animation: liquidWave 14s ease-in-out infinite; */
 }
 
 .star {
@@ -221,17 +221,15 @@ img {
     margin-top: 2vh;
   }
   .WelcomeBlock {
-    display: block;
-    padding: 0% 1%;
+    flex-direction: column;
   }
   #LeftWelcome {
     width: 100%;
   }
   #RightWelcome {
     gap: 1vw;
-    width: 98%;
+    width: 100%;
     height: 30%;
-    margin: 0% 2%;
   }
   .SecondBlock {
     display: flex;
@@ -249,6 +247,7 @@ img {
   }
   .LeftGrid {
     width: 100%;
+    flex-direction: column-reverse;
   }
   .RightGrid {
     width: 100%;
@@ -260,10 +259,7 @@ img {
   .TextBlock {
     margin: 0;
   }
-  .ImgBlock1 {
-    width: 25vh;
-    height: 25vh;
-  }
+
   .ContactBlock > header {
     margin-bottom: 40vh;
   }
@@ -378,17 +374,15 @@ img {
     width: 50%;
   }
   .WelcomeBlock {
-    display: block;
-    padding: 0% 1%;
+    flex-direction: column;
   }
   #LeftWelcome {
     width: 100%;
   }
   #RightWelcome {
     gap: 1vw;
-    width: 98%;
+    width: 100%;
     height: 30%;
-    margin: 0% 2%;
   }
   .SecondBlock {
     display: flex;
@@ -406,6 +400,7 @@ img {
   }
   .LeftGrid {
     width: 100%;
+    flex-direction: column-reverse;
   }
   .RightGrid {
     width: 100%;
@@ -417,10 +412,7 @@ img {
   .TextBlock {
     margin: 0;
   }
-  .ImgBlock1 {
-    width: 25vh;
-    height: 25vh;
-  }
+
   .ContactBlock > header {
     margin-bottom: 30vh;
   }
@@ -518,17 +510,15 @@ img {
     left: 9%;
   }
   .WelcomeBlock {
-    display: block;
-    padding: 0% 1%;
+    flex-direction: column;
   }
   #LeftWelcome {
     width: 100%;
   }
   #RightWelcome {
     gap: 1vw;
-    width: 98%;
+    width: 100%;
     height: 30%;
-    margin: 0% 2%;
   }
   .SecondBlock {
     display: flex;
@@ -590,7 +580,7 @@ img {
     left: 10%;
   }
   .WelcomeBlock {
-    display: block;
+    flex-direction: column;
   }
   #LeftWelcome {
     width: 100%;
@@ -703,4 +693,8 @@ img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.b {
+  background-color: rgba(0, 68, 3, 0.836);
 }

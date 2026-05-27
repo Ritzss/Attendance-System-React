@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { ContextApi } from "../../context/ContextProvider";
 import { NavLink, useNavigate } from "react-router";
+import CoinFlipAvatar from "../UI/CoinFlipAvatar";
 
 const AuthNav = () => {
   const { loggin, setLoggin, currentUser,setCurrentUser, setAuthUser } =
@@ -11,7 +12,21 @@ const AuthNav = () => {
   return (
     <div>
       {loggin ? (
-        <span className="flex gap-2">
+        <span className="flex justify-around items-center gap-2">
+          <div className="ImgBlock1 rounded-full shadow-[inset_0_0_20px_rgba(0,0,0,0.7)] bg-[#000000]  w-[7vh] h-[7vh] flex items-center justify-center">
+          {currentUser?.profileimage ? (
+            <img
+              className="w-full h-full rounded-full"
+              style={{
+                border: currentUser?.marked ? "3px solid green" : "3px solid red",
+              }}
+              src={`http://localhost:5000${currentUser?.profileimage}`}
+              alt="ProfilePic"
+            />
+          ) : (
+            <CoinFlipAvatar />
+          )}
+        </div>
           <NavLink to={`profile/${currentUser?.id}`}>{currentUser?.Name}</NavLink>
           <span>
             <button
