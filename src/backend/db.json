@@ -1,0 +1,50 @@
+{
+  "admins": [
+    {
+      "id": "0926",
+      "name": "Ritanshu Babuta",
+      "email": "ritanshubabuta@gmail.com",
+      "department": "IT",
+      "role": "admin",
+      "passwordHash": "$2b$10$W7IvKWyS0Ee3o7Ea0qYbJ.0Ns2cnQ550oJrXmixnsRMAWSZg2p9LO",
+      "createdAt": "2026-06-03T00:00:00.000Z"
+    },
+    {
+      "id": "3f8c",
+      "name": "ritanshu babuta",
+      "email": "ritzs@gmail.com",
+      "department": "it",
+      "role": "admin",
+      "passwordHash": "$2b$10$uCtnGzSshcyDEzckMIXIxOeSSaFs95/E4azqY/sOP.8djSnxr8lai",
+      "createdAt": "2026-06-03T00:00:00.000Z"
+    },
+    {
+      "id": "5c1f",
+      "name": "ritanshu",
+      "email": "kumaeee13@gmail.com`",
+      "department": "kij",
+      "role": "admin",
+      "passwordHash": "$2b$10$5KGKYNXONSvyqsmtQaoB7ukZp0tUCRSZCDb5ubWlslKox53.oXGd2",
+      "createdAt": "2026-06-03T00:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "0783",
+      "employeeId": "EMP-0783",
+      "name": "Ritanshu Babuta",
+      "email": "ritanshu@gmail.com",
+      "department": "sdd",
+      "role": "employee",
+      "passwordHash": "$2b$10$NzAbSbu9cyZJVHtAHrmGf.plcbhu9refricL3KQ8w.VSjtn8ywx3m",
+      "createdAt": "2026-06-03T00:00:00.000Z"
+    }
+  ],
+  "attendance": [],
+  "settings": {
+    "officeStartTime": "09:00",
+    "lateThresholdMinutes": 15,
+    "autoAbsentCutoff": "11:00",
+    "autoCheckoutTime": "18:00"
+  }
+}
