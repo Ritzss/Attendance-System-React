@@ -6,7 +6,11 @@
       "email": "ritanshubabuta@gmail.com",
       "department": "IT",
       "role": "admin",
+<<<<<<< HEAD
       "passwordHash": "$2a$12$jl5BlDpJp0CVQMvu24tok.PP2k132HqeqSxgqXqf4sgd13Z7QzvtO",
+=======
+      "passwordHash": "$2b$10$W7IvKWyS0Ee3o7Ea0qYbJ.0Ns2cnQ550oJrXmixnsRMAWSZg2p9LO",
+>>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
       "createdAt": "2026-06-03T00:00:00.000Z"
     },
     {
@@ -28,6 +32,7 @@
       "createdAt": "2026-06-03T00:00:00.000Z"
     }
   ],
+<<<<<<< HEAD
   "users": [],
   "attendance": [],
   "settings": {
@@ -37,3 +42,25 @@
     "autoCheckoutTime": "19:00"
   }
 }
+=======
+  "users": [
+    {
+      "id": "0783",
+      "employeeId": "EMP-0783",
+      "name": "Ritanshu Babuta",
+      "email": "ritanshu@gmail.com",
+      "department": "sdd",
+      "role": "employee",
+      "passwordHash": "$2b$10$NzAbSbu9cyZJVHtAHrmGf.plcbhu9refricL3KQ8w.VSjtn8ywx3m",
+      "createdAt": "2026-06-03T00:00:00.000Z"
+    }
+  ],
+  "attendance": [],
+  "settings": {
+    "officeStartTime": "09:00",
+    "lateThresholdMinutes": 15,
+    "autoAbsentCutoff": "11:00",
+    "autoCheckoutTime": "18:00"
+  }
+}
+>>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
