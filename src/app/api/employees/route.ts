@@ -11,7 +11,11 @@ export async function GET(request: Request) {
   const department = searchParams.get("department") ?? "";
   const db = await readDb();
   const employees = db.users.filter((employee) => {
-    const matchesQuery = [employee.name, employee.email, employee.employeeId].some((field) => field.toLowerCase().includes(query));
+    const matchesQuery = [
+      employee.name,
+      employee.email,
+      employee.employeeId,
+    ].some((field) => field.toLowerCase().includes(query));
     const matchesDepartment = !department || employee.department === department;
     return matchesQuery && matchesDepartment;
   });
@@ -21,11 +25,21 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   await requireAdmin();
   const parsed = employeeCreateSchema.safeParse(await request.json());
-  if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Invalid data" }, { status: 400 });
+  if (!parsed.success)
+    return NextResponse.json(
+      { error: parsed.error.issues[0]?.message ?? "Invalid data" },
+      { status: 400 },
+    );
   try {
     const result = await createEmployee(parsed.data);
     return NextResponse.json(result, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: error instanceof Error ? error.message : "Failed to create employee" }, { status: 400 });
+    return NextResponse.json(
+      {
+        error:
+          error instanceof Error ? error.message : "Failed to create employee",
+      },
+      { status: 400 },
+    );
   }
 }

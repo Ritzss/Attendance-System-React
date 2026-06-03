@@ -21,9 +21,19 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   await requireAdmin();
   const parsed = attendanceSchema.safeParse(await request.json());
-  if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Invalid data" }, { status: 400 });
+  if (!parsed.success)
+    return NextResponse.json(
+      { error: parsed.error.issues[0]?.message ?? "Invalid data" },
+      { status: 400 },
+    );
   const db = await readDb();
-  const record = { id: randomUUID(), timestamp: parsed.data.timestamp ?? new Date().toISOString(), employeeId: parsed.data.employeeId, status: parsed.data.status, synced: parsed.data.synced ?? true };
+  const record = {
+    id: randomUUID(),
+    timestamp: parsed.data.timestamp ?? new Date().toISOString(),
+    employeeId: parsed.data.employeeId,
+    status: parsed.data.status,
+    synced: parsed.data.synced ?? true,
+  };
   db.attendance.unshift(record);
   await writeDb(db);
   return NextResponse.json({ record }, { status: 201 });

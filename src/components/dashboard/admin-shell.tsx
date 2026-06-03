@@ -26,16 +26,38 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-slate-50 lg:grid lg:grid-cols-[280px_1fr]">
       <aside className="border-b border-slate-200 bg-white p-4 lg:min-h-screen lg:border-b-0 lg:border-r">
         <div className="mb-8 flex items-center gap-3 px-2">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-slate-950 text-white">A</div>
-          <div><p className="font-bold">Attendance Admin</p><p className="text-xs text-slate-500">HR operations panel</p></div>
+          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-slate-950 text-white">
+            A
+          </div>
+          <div>
+            <p className="font-bold">Attendance Admin</p>
+            <p className="text-xs text-slate-500">HR operations panel</p>
+          </div>
         </div>
         <nav className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
           {nav.map((item) => {
             const active = pathname.startsWith(item.href);
-            return <Link key={item.href} href={item.href} className={cn("flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100", active && "bg-slate-950 text-white hover:bg-slate-950")}><span aria-hidden>{item.icon}</span>{item.label}</Link>;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100",
+                  active && "bg-slate-950 text-white hover:bg-slate-950",
+                )}
+              >
+                <span aria-hidden>{item.icon}</span>
+                {item.label}
+              </Link>
+            );
           })}
         </nav>
-        <button onClick={logout} className="mt-8 flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-red-600 hover:bg-red-50"><span aria-hidden>⇥</span> Logout</button>
+        <button
+          onClick={logout}
+          className="mt-8 flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-red-600 hover:bg-red-50"
+        >
+          <span aria-hidden>⇥</span> Logout
+        </button>
       </aside>
       <main className="p-4 sm:p-6 lg:p-8">{children}</main>
     </div>

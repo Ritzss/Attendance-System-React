@@ -10,12 +10,24 @@ export function generateEmployeeId(existing: Employee[]) {
 }
 
 export function generatePassword() {
-  return Math.random().toString(36).slice(2, 6).toUpperCase() + Math.random().toString(36).slice(2, 8);
+  return (
+    Math.random().toString(36).slice(2, 6).toUpperCase() +
+    Math.random().toString(36).slice(2, 8)
+  );
 }
 
-export async function createEmployee(input: { name: string; email: string; department: string; sendEmail?: boolean }) {
+export async function createEmployee(input: {
+  name: string;
+  email: string;
+  department: string;
+  sendEmail?: boolean;
+}) {
   const db = await readDb();
-  if (db.users.some((user) => user.email.toLowerCase() === input.email.toLowerCase())) {
+  if (
+    db.users.some(
+      (user) => user.email.toLowerCase() === input.email.toLowerCase(),
+    )
+  ) {
     throw new Error("An employee with this email already exists.");
   }
   const plainPassword = generatePassword();
@@ -41,7 +53,9 @@ async function sendCredentials(employee: Employee, password: string) {
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT ?? 587),
     secure: process.env.SMTP_SECURE === "true",
-    auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } : undefined,
+    auth: process.env.SMTP_USER
+      ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
+      : undefined,
   });
   await transporter.sendMail({
     from: process.env.SMTP_FROM ?? "Attendance Admin <no-reply@example.com>",

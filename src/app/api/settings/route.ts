@@ -12,7 +12,11 @@ export async function GET() {
 export async function PUT(request: Request) {
   await requireAdmin();
   const parsed = settingsSchema.safeParse(await request.json());
-  if (!parsed.success) return NextResponse.json({ error: parsed.error.issues[0]?.message ?? "Invalid settings" }, { status: 400 });
+  if (!parsed.success)
+    return NextResponse.json(
+      { error: parsed.error.issues[0]?.message ?? "Invalid settings" },
+      { status: 400 },
+    );
   const db = await readDb();
   db.settings = parsed.data;
   await writeDb(db);
