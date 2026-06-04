@@ -2,21 +2,12 @@ import bcrypt from "bcryptjs";
 import { createHmac, timingSafeEqual } from "crypto";
 import { cookies } from "next/headers";
 import { readDb } from "./database";
-<<<<<<< HEAD
-import { redirect } from "next/navigation";
-
-export const SESSION_COOKIE = "attendance_admin_session";
-const JWT_SECRET =
-  process.env.JWT_SECRET ?? "dev-attendance-admin-secret-change-me";
-const maxAge = 60 * 60 * 8;
-=======
 
 export const SESSION_COOKIE = "attendance_admin_session";
 
 const JWT_SECRET = process.env.JWT_SECRET ?? "dev-attendance-admin-secret-change-me";
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 8;
 
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
 export type SessionUser = {
   id: string;
   email: string;
@@ -24,48 +15,6 @@ export type SessionUser = {
   role: "admin";
   exp?: number;
 };
-<<<<<<< HEAD
-const b64 = (value: string) => Buffer.from(value).toString("base64url");
-const sign = (value: string) =>
-  createHmac("sha256", JWT_SECRET).update(value).digest("base64url");
-
-export async function authenticateAdmin(email: string, password: string) {
-  const db = await readDb();
-  const admin = db.admins.find(
-    (item) => item.email.toLowerCase() === email.toLowerCase(),
-  );
-  if (!admin) return null;
-  return (await bcrypt.compare(password, admin.passwordHash))
-    ? ({
-        id: admin.id,
-        email: admin.email,
-        name: admin.name,
-        role: admin.role,
-      } satisfies SessionUser)
-    : null;
-}
-export function signSession(user: SessionUser) {
-  const header = b64(JSON.stringify({ alg: "HS256", typ: "JWT" }));
-  const payload = b64(
-    JSON.stringify({ ...user, exp: Math.floor(Date.now() / 1000) + maxAge }),
-  );
-  return `${header}.${payload}.${sign(`${header}.${payload}`)}`;
-}
-export function verifySession(token?: string): SessionUser | null {
-  try {
-    if (!token) return null;
-    const [header, payload, signature] = token.split(".");
-    const expected = sign(`${header}.${payload}`);
-    if (!timingSafeEqual(Buffer.from(signature), Buffer.from(expected)))
-      return null;
-    const session = JSON.parse(
-      Buffer.from(payload, "base64url").toString(),
-    ) as SessionUser;
-    return session.role === "admin" &&
-      (session.exp ?? 0) > Math.floor(Date.now() / 1000)
-      ? session
-      : null;
-=======
 
 const base64UrlEncode = (value: string) => Buffer.from(value).toString("base64url");
 const sign = (value: string) => createHmac("sha256", JWT_SECRET).update(value).digest("base64url");
@@ -128,40 +77,18 @@ export function verifySession(token?: string): SessionUser | null {
 
     const session = JSON.parse(Buffer.from(payload, "base64url").toString()) as SessionUser;
     return session.role === "admin" && (session.exp ?? 0) > Math.floor(Date.now() / 1000) ? session : null;
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
   } catch {
     return null;
   }
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
 export async function getSession() {
   const cookieStore = await cookies();
   return verifySession(cookieStore.get(SESSION_COOKIE)?.value);
 }
-<<<<<<< HEAD
-// export async function requireAdmin() {
-//   const session = await getSession();
-//   if (!session) throw new Error("Unauthorized");
-//   return session;
-// }
-
-
-export async function requireAdmin() {
-  const session = await getSession();
-
-  if (!session) {
-    redirect("/login");
-  }
-
-=======
 
 export async function requireAdmin() {
   const session = await getSession();
   if (!session) throw new Error("Unauthorized");
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
   return session;
 }
 
@@ -171,18 +98,11 @@ export async function setSessionCookie(token: string) {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
-<<<<<<< HEAD
-    maxAge,
-    path: "/",
-  });
-}
-=======
     maxAge: SESSION_MAX_AGE_SECONDS,
     path: "/",
   });
 }
 
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
 export async function clearSessionCookie() {
   const cookieStore = await cookies();
   cookieStore.delete(SESSION_COOKIE);

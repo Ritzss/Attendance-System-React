@@ -10,11 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
       <body cz-shortcut-listen="true">
-=======
-      <body>
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
         {children}
         <Toaster position="top-right" />
       </body>

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-<<<<<<< HEAD
 :root {
   color-scheme: light;
 }
@@ -12,8 +11,3 @@ body {
 * {
   box-sizing: border-box;
 }
-=======
-:root { color-scheme: light; }
-body { margin: 0; background: #f8fafc; color: #0f172a; }
-* { box-sizing: border-box; }
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe

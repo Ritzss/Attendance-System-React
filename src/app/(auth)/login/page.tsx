@@ -13,7 +13,6 @@ export default function LoginPage() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget));
-<<<<<<< HEAD
     if (!String(data.email ?? "").includes("@") || !data.password)
       return toast.error("Enter a valid email and password.");
     setLoading(true);
@@ -22,11 +21,6 @@ export default function LoginPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-=======
-    if (!String(data.email ?? "").includes("@") || !data.password) return toast.error("Enter a valid email and password.");
-    setLoading(true);
-    const response = await fetch("/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
     setLoading(false);
     if (!response.ok) return toast.error("Invalid admin credentials.");
     toast.success("Welcome back");
@@ -35,7 +29,6 @@ export default function LoginPage() {
   return (
     <main className="grid min-h-screen place-items-center bg-[radial-gradient(circle_at_top,#e2e8f0,transparent_40%),#f8fafc] p-6">
       <Card className="w-full max-w-md">
-<<<<<<< HEAD
         <div className="mb-8">
           <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
             Admin only
@@ -44,8 +37,8 @@ export default function LoginPage() {
             Sign in to Attendance Admin
           </h1>
           <p className="mt-2 text-sm text-slate-500">
-            Protected HR dashboard for employee, attendance, reports, analytics,
-            and settings management.
+            Use the admin credentials configured in your .env file to access the
+            HR dashboard.
           </p>
         </div>
         <form onSubmit={submit} className="space-y-4">
@@ -56,6 +49,7 @@ export default function LoginPage() {
               type="email"
               className="mt-2"
               placeholder="admin@example.com"
+              autoComplete="email"
             />
           </label>
           <label className="block text-sm font-medium">
@@ -65,18 +59,12 @@ export default function LoginPage() {
               type="password"
               className="mt-2"
               placeholder="••••••••"
+              autoComplete="current-password"
             />
           </label>
           <Button disabled={loading} className="w-full">
             {loading ? "Signing in..." : "Sign in"}
           </Button>
-=======
-        <div className="mb-8"><p className="text-sm font-semibold uppercase tracking-widest text-slate-500">Admin only</p><h1 className="mt-2 text-3xl font-bold">Sign in to Attendance Admin</h1><p className="mt-2 text-sm text-slate-500">Use the admin credentials configured in your .env file to access the HR dashboard.</p></div>
-        <form onSubmit={submit} className="space-y-4">
-          <label className="block text-sm font-medium">Email<Input name="email" type="email" className="mt-2" placeholder="admin@example.com" autoComplete="email" /></label>
-          <label className="block text-sm font-medium">Password<Input name="password" type="password" className="mt-2" placeholder="••••••••" autoComplete="current-password" /></label>
-          <Button disabled={loading} className="w-full">{loading ? "Signing in..." : "Sign in"}</Button>
->>>>>>> cc7865a7ae87dfe2944893f78604a8487b6d10fe
         </form>
       </Card>
     </main>
